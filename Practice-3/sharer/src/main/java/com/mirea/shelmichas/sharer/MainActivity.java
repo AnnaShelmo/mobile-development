@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     public void onClickPick(View view) {
 
         Intent intent = new Intent(Intent.ACTION_PICK);
-        intent.setType("*/*");
+        intent.setType("*/*"); // любой тип фпйла
 
         imageActivityResultLauncher.launch(intent);
     }

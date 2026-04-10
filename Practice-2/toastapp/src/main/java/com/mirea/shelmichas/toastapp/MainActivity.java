@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         int count = text.length();
 
         Toast.makeText(this,
-                "СТУДЕНТ № X ГРУППА X Количество символов - " + count,
+                "СТУДЕНТ № 30 ГРУППА БСБО-08-23 Количество символов - " + count,
                 Toast.LENGTH_LONG).show();
     }
 }

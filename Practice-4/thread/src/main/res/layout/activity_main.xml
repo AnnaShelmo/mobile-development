@@ -17,14 +17,49 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="16dp"/>
 
+    <EditText
+        android:id="@+id/editTextPairs"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Общее количество пар"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@id/textViewInfo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"/>
+
+    <EditText
+        android:id="@+id/editTextDays"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Количество учебных дней"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@id/editTextPairs"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"/>
+
     <Button
         android:id="@+id/buttonStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Запустить"
-        app:layout_constraintTop_toBottomOf="@id/textViewInfo"
+        app:layout_constraintTop_toBottomOf="@id/editTextDays"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="24dp"/>
+
+    <TextView
+        android:id="@+id/textViewResult"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Результат"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/buttonStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

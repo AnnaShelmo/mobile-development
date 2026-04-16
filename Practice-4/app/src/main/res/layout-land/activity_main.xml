@@ -15,13 +15,14 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_margin="16dp"/>
 
-    <TextView
+    <EditText
         android:id="@+id/textSongTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Название песни"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:inputType="none"
         app:layout_constraintStart_toEndOf="@id/imageAlbum"
         app:layout_constraintTop_toTopOf="@id/imageAlbum"
         android:layout_marginStart="16dp"/>

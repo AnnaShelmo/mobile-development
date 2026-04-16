@@ -1,6 +1,7 @@
 package com.mirea.shelmichas.lesson4;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,5 +17,13 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        // Устанавливаем номер по списку в поле названия песни
+        binding.textSongTitle.setText("Мой номер по списку №30");
+
+        // Обработчик кнопки
+        binding.buttonPlay.setOnClickListener(v ->
+                Log.d(MainActivity.class.getSimpleName(), "buttonPlay clicked")
+        );
     }
 }

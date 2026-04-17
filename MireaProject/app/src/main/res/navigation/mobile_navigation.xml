@@ -38,4 +38,9 @@
         android:name="com.mirea.shelmichas.mireaproject.WebViewFragment"
         android:label="fragment_web_view"
         tools:layout="@layout/fragment_web_view" />
+    <fragment
+        android:id="@+id/nav_music"
+        android:name="com.mirea.shelmichas.mireaproject.ui.music.MusicFragment"
+        android:label="Music"
+        tools:layout="@layout/fragment_music" />
 </navigation>

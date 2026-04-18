@@ -28,12 +28,12 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final int REQUEST_CODE_PERMISSION = 100;
+    private static final int REQUEST_CODE_PERMISSION = 100;// код для запроса разрешений
     private static final int CAMERA_REQUEST = 0;
     private boolean isWork = false;
-    private Uri imageUri;
+    private Uri imageUri; // адрес фото (content://...)
     private ActivityMainBinding binding;
-    private ActivityResultLauncher<Intent> cameraActivityResultLauncher;
+    private ActivityResultLauncher<Intent> cameraActivityResultLauncher;// запуск камеры
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        // проверка разрешений
         int cameraPermissionStatus = ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
         int storagePermissionStatus = ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
 
@@ -53,27 +54,31 @@ public class MainActivity extends AppCompatActivity {
         ActivityResultCallback<ActivityResult> callback = new ActivityResultCallback<ActivityResult>() {
             @Override
             public void onActivityResult(ActivityResult result) {
-                if (result.getResultCode() == RESULT_OK) {
+                if (result.getResultCode() == RESULT_OK) { // если фото сделано
                     Intent data = result.getData();
-                    binding.imageView.setImageURI(imageUri);
+                    binding.imageView.setImageURI(imageUri); // показать фото
                 }
             }
         };
 
         cameraActivityResultLauncher = registerForActivityResult(
-                new ActivityResultContracts.StartActivityForResult(),
+                new ActivityResultContracts.StartActivityForResult(), // запуск Activity и получение результата
                 callback);
 
+        // при нажатии на картинку
         binding.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                if (isWork) {
+                Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);// открыть камеру
+                if (isWork) { // если есть разрешение - создаём фото
                     try {
                         File photoFile = createImageFile();
+                        // получение адреса файла в специальном формате
                         String authorities = getApplicationContext().getPackageName() + ".fileprovider";
                         imageUri = FileProvider.getUriForFile(MainActivity.this, authorities, photoFile);
+                        // сохранить фото по этому адресу
                         cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
+                        // запуск камеры
                         cameraActivityResultLauncher.launch(cameraIntent);
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -94,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // Создание файла для фото
     private File createImageFile() throws IOException {
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.ENGLISH).format(new Date());
         String imageFileName = "IMAGE_" + timeStamp + "_";

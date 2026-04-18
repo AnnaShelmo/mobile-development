@@ -7,17 +7,17 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-public class MyLooper extends Thread {
+public class MyLooper extends Thread { // создаем свой поток
 
-    public Handler handler;
-    private Handler mainHandler;
+    public Handler handler; // обработчик внутри нашего потока
+    private Handler mainHandler; // обработчик главного потока (UI)
 
-    public MyLooper(Handler mainThreadHandler) {
+    public MyLooper(Handler mainThreadHandler) { // Передаём mainHandler чтобы отправлять результат обратно в UI
         mainHandler = mainThreadHandler;
     }
 
     @Override
-    public void run() {
+    public void run() { // Запускаем поток, создаём очередь сообщений.
 
         Log.d("MyLooper", "run");
 
@@ -25,7 +25,7 @@ public class MyLooper extends Thread {
 
         handler = new Handler(Looper.myLooper()) {
             @Override
-            public void handleMessage(@NonNull Message msg) {
+            public void handleMessage(@NonNull Message msg) { // когда приходит сообщение
                 String age = msg.getData().getString("AGE");
                 String profession = msg.getData().getString("PROFESSION");
                 Log.d("MyLooper get message: ", "Возраст: " + age + ", Профессия: " + profession);
@@ -38,10 +38,10 @@ public class MyLooper extends Thread {
                 android.os.Bundle bundle = new android.os.Bundle();
                 bundle.putString("result", String.format("Возраст: %s, Профессия: %s", age, profession));
                 message.setData(bundle);
-                mainHandler.sendMessage(message);
+                mainHandler.sendMessage(message); // отправляем результат в главный поток через mainHandler
             }
         };
 
-        Looper.loop();
+        Looper.loop(); // Запускаем бесконечный цикл — поток работает пока не остановим
     }
 }

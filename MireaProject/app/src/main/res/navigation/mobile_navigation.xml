@@ -43,4 +43,19 @@
         android:name="com.mirea.shelmichas.mireaproject.ui.music.MusicFragment"
         android:label="Music"
         tools:layout="@layout/fragment_music" />
+    <fragment
+        android:id="@+id/nav_sensor"
+        android:name="com.mirea.shelmichas.mireaproject.ui.sensor.SensorFragment"
+        android:label="Sensor"
+        tools:layout="@layout/fragment_sensor" />
+    <fragment
+        android:id="@+id/nav_camera"
+        android:name="com.mirea.shelmichas.mireaproject.ui.camera.CameraFragment"
+        android:label="Camera"
+        tools:layout="@layout/fragment_camera" />
+    <fragment
+        android:id="@+id/nav_recorder"
+        android:name="com.mirea.shelmichas.mireaproject.ui.recorder.RecorderFragment"
+        android:label="Recorder"
+        tools:layout="@layout/fragment_recorder" />
 </navigation>

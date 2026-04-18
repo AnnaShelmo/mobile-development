@@ -18,6 +18,7 @@ public class UploadWorker extends Worker {
         super(context, params);
     }
 
+    // Метод doWork() —  пишем задачу. Выполняется в фоне. Возвращаем Result.success() когда выполнено.
     @Override
     public Result doWork() {
         Log.d(TAG, "doWork: start");

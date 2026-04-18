@@ -19,9 +19,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        // создаётся объект binding из XML-файла
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        // Получение текущего (главный) потока
         Thread mainThread = Thread.currentThread();
 
         binding.textViewInfo.setText(
@@ -44,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                     public void run() {
                         int numberThread = counter++;
                         Log.d("ThreadProject", String.format("Запущен поток № %d студентом группы № БСБО-08-23 номер по списку № 30", numberThread));
-                        long endTime = System.currentTimeMillis() + 20 * 1000;
+                        long endTime = System.currentTimeMillis() + 20 * 1000; // Имитация долгой работы — 20 секунд
                         while (System.currentTimeMillis() < endTime) {
                             synchronized (this) {
                                 try {
@@ -57,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                         Log.d("ThreadProject", "Выполнен поток № " + numberThread);
 
+                        // подсчёт среднего
                         int pairs = Integer.parseInt(binding.editTextPairs.getText().toString());
                         int days = Integer.parseInt(binding.editTextDays.getText().toString());
                         double average = (double) pairs / days;

@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        // Создаётся 3 задачи (Runnable) для выполнения в UI-потоке
         final Runnable runn1 = () ->
                 binding.tvInfo.setText(
                         "runOnUiThread - выполняется в UI-потоке сразу после добавления в очередь\n"
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
                                 "3) postDelayed"
                 );
 
+        // запуск фонового потока
         Thread t = new Thread(() -> {
             try {
 

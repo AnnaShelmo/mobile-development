@@ -33,5 +33,17 @@
             android:id="@+id/nav_music"
             android:icon="@drawable/ic_launcher_foreground"
             android:title="Music" />
+        <item
+            android:id="@+id/nav_sensor"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="Sensor" />
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="Camera" />
+        <item
+            android:id="@+id/nav_recorder"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="Recorder" />
     </group>
 </menu>

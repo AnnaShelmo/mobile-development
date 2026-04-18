@@ -15,10 +15,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        // создаётся объект binding из XML-файла
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        // Устанавливаем номер по списку в поле названия песни
+        // номер по списку в поле названия песни
         binding.textSongTitle.setText("Мой номер по списку №30");
 
         // Обработчик кнопки

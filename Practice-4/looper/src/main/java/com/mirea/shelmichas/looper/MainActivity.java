@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        // Создаём обработчик для главного потока. Сюда приходит результат из MyLooper.
         Handler mainThreadHandler = new Handler(Looper.getMainLooper()) {
             @Override
             public void handleMessage(Message msg) {
@@ -28,9 +29,12 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
+        // Создаём и запускаем MyLooper
         myLooper = new MyLooper(mainThreadHandler);
         myLooper.start();
 
+        // создаём сообщение с данными
+        // отправляем в MyLooper через handler
         binding.buttonStart.setOnClickListener(v -> {
             Message msg = Message.obtain();
             Bundle bundle = new Bundle();

@@ -20,6 +20,7 @@ public class PlayerService extends Service {
         throw new UnsupportedOperationException("Not yet implemented");
     }
 
+    // запуск музыки
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         mediaPlayer.start();
@@ -33,6 +34,7 @@ public class PlayerService extends Service {
 
     @Override
     public void onCreate() {
+        // создаём уведомление
         super.onCreate();
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setContentText("Playing....")
@@ -47,10 +49,13 @@ public class PlayerService extends Service {
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
         notificationManager.createNotificationChannel(channel);
         startForeground(1, builder.build());
+
+        // создаём плеер
         mediaPlayer = MediaPlayer.create(this, R.raw.true_widow);
         mediaPlayer.setLooping(false);
     }
 
+    // Когда останавливают сервис: убираем уведомление, останавливаем музыку
     @Override
     public void onDestroy() {
         stopForeground(true);

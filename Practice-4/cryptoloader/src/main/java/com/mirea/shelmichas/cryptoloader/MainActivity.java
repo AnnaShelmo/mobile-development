@@ -36,11 +36,17 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        // При нажатии кнопки:
+        //
+        //берём текст
+        //создаём ключ AES
+        //шифруем текст
         binding.buttonEncrypt.setOnClickListener(v -> {
             String text = binding.editTextInput.getText().toString();
             SecretKey key = generateKey();
             byte[] shiper = encryptMsg(text, key);
 
+            // Упаковываем зашифрованный текст и ключ в Bundle, отправляем в Loader через LoaderManager.
             Bundle bundle = new Bundle();
             bundle.putByteArray(MyLoader.ARG_WORD, shiper);
             bundle.putByteArray("key", key.getEncoded());
@@ -83,6 +89,8 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         }
     }
 
+    // onCreateLoader — создаёт MyLoader когда его ещё нет
+    //onLoadFinished — вызывается когда Loader вернул результат, показываем Toast
     @NonNull
     @Override
     public Loader<String> onCreateLoader(int id, @Nullable Bundle bundle) {

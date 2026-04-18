@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.POST_NOTIFICATIONS, Manifest.permission.FOREGROUND_SERVICE}, PermissionCode);
         }
 
+        // При нажатии Play: создаём Intent на PlayerService, запускаем как foreground service
         binding.buttonPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // При нажатии Stop: останавливаем сервис
         binding.buttonStop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

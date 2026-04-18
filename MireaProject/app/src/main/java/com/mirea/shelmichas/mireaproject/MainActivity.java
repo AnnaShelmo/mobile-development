@@ -44,7 +44,10 @@ public class MainActivity extends AppCompatActivity {
                     R.id.nav_transform, R.id.nav_reflow, R.id.nav_slideshow, R.id.nav_settings,
                     R.id.nav_data,      // добавлено
                     R.id.nav_web,
-                    R.id.nav_music)
+                    R.id.nav_music,
+                    R.id.nav_sensor,
+                    R.id.nav_camera,
+                    R.id.nav_recorder)
                     .setOpenableLayout(binding.drawerLayout)
                     .build();
             NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);

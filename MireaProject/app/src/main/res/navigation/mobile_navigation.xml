@@ -58,4 +58,14 @@
         android:name="com.mirea.shelmichas.mireaproject.ui.recorder.RecorderFragment"
         android:label="Recorder"
         tools:layout="@layout/fragment_recorder" />
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.mirea.shelmichas.mireaproject.ui.profile.ProfileFragment"
+        android:label="Профиль"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/nav_files"
+        android:name="com.mirea.shelmichas.mireaproject.ui.files.FileWorkerFragment"
+        android:label="Работа с файлами"
+        tools:layout="@layout/fragment_file_worker" />
 </navigation>

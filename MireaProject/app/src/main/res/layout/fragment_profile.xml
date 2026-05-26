@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Профиль"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/labelName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Имя:"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Введите имя"
+        app:layout_constraintTop_toBottomOf="@id/labelName"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/labelAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Возраст:"
+        app:layout_constraintTop_toBottomOf="@id/editName"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Введите возраст"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@id/labelAge"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/labelGenre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Любимый жанр:"
+        app:layout_constraintTop_toBottomOf="@id/editAge"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinnerGenre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/labelGenre"
+        android:layout_marginTop="8dp" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Сохранить"
+        app:layout_constraintTop_toBottomOf="@id/spinnerGenre"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -63,7 +63,9 @@ public class MainActivity extends AppCompatActivity {
                         int pairs = Integer.parseInt(binding.editTextPairs.getText().toString());
                         int days = Integer.parseInt(binding.editTextDays.getText().toString());
                         double average = (double) pairs / days;
-                        binding.textViewResult.setText("Среднее количество пар в день: " + average);
+                        binding.textViewResult.post(() -> {
+                            binding.textViewResult.setText("Среднее: " + average);
+                        });
                     }
                 }).start();
             }

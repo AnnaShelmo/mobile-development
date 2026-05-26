@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Блокнот"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/labelFileName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Название файла:"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editFileName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="quote1.txt"
+        app:layout_constraintTop_toBottomOf="@id/labelFileName"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/labelQuote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Цитата:"
+        app:layout_constraintTop_toBottomOf="@id/editFileName"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editQuote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Введите цитату..."
+        android:minLines="3"
+        app:layout_constraintTop_toBottomOf="@id/labelQuote"
+        android:layout_marginTop="8dp" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Сохранить в файл"
+        app:layout_constraintTop_toBottomOf="@id/editQuote"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnLoad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Загрузить из файла"
+        app:layout_constraintTop_toBottomOf="@id/btnSave"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

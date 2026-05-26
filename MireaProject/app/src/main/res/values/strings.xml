@@ -24,4 +24,17 @@
     </string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="menu_profile">Профиль</string>
+    <string name="menu_files">Работа с файлами</string>
+
+    <string-array name="genres">
+        <item>Экшн</item>
+        <item>Комедия</item>
+        <item>Драма</item>
+        <item>Фантастика</item>
+        <item>Ужасы</item>
+        <item>Романтика</item>
+        <item>Детектив</item>
+    </string-array>
 </resources>

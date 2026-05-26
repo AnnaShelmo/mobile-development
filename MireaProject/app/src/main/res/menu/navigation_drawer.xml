@@ -45,5 +45,13 @@
             android:id="@+id/nav_recorder"
             android:icon="@drawable/ic_launcher_foreground"
             android:title="Recorder" />
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="Профиль" />
+        <item
+            android:id="@+id/nav_files"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="Работа с файлами" />
     </group>
 </menu>

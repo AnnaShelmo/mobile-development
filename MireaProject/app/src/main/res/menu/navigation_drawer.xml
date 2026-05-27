@@ -39,7 +39,7 @@
             android:title="Sensor" />
         <item
             android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_launcher_foreground"
+            android:icon="@drawable/ic_camera_black_24dp"
             android:title="Camera" />
         <item
             android:id="@+id/nav_recorder"
@@ -53,5 +53,14 @@
             android:id="@+id/nav_files"
             android:icon="@drawable/ic_launcher_foreground"
             android:title="Работа с файлами" />
+        <item
+            android:id="@+id/nav_network"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="Сетевые данные" />
     </group>
+
+    <item
+        android:id="@+id/nav_sign_out"
+        android:icon="@android:drawable/ic_lock_power_off"
+        android:title="Sign Out" />
 </menu>

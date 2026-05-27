@@ -1,5 +1,6 @@
 package com.mirea.shelmichas.mireaproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.Menu;
@@ -7,6 +8,7 @@ import android.view.Menu;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import androidx.annotation.NonNull;
 import androidx.navigation.NavController;
@@ -49,11 +51,24 @@ public class MainActivity extends AppCompatActivity {
                     R.id.nav_camera,
                     R.id.nav_recorder,
                     R.id.nav_profile,
-                    R.id.nav_files)
+                    R.id.nav_files,
+                    R.id.nav_network)
                     .setOpenableLayout(binding.drawerLayout)
                     .build();
             NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
             NavigationUI.setupWithNavController(navigationView, navController);
+
+            // Обработка Sign Out — остальные пункты работают через NavigationUI
+            navigationView.setNavigationItemSelectedListener(item -> {
+                if (item.getItemId() == R.id.nav_sign_out) {
+                    FirebaseAuth.getInstance().signOut();
+                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                    finish();
+                    return true;
+                }
+                return NavigationUI.onNavDestinationSelected(item, navController);
+            });
         }
     }
 

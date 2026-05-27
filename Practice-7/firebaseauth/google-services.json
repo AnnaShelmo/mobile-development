@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "649494406975",
+    "project_id": "fir-auth-3300d",
+    "storage_bucket": "fir-auth-3300d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:649494406975:android:f4ad694fc84013f93b958a",
+        "android_client_info": {
+          "package_name": "com.mirea.shelmichas.firebaseauth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByq11xgTI5hT9sCS6Po7qcK1aPpSFzx0g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

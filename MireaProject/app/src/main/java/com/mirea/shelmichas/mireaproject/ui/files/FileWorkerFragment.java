@@ -24,6 +24,9 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
+// Фрагмент для создания/просмотра/удаления текстовых заметок
+// Хранит заметки как .txt файлы во внутреннем хранилище приложения
+// (Context.getFilesDir() — /data/data/<package>/files/)
 public class FileWorkerFragment extends Fragment {
 
     private LinearLayout notesContainer;
@@ -43,6 +46,7 @@ public class FileWorkerFragment extends Fragment {
         return view;
     }
 
+    // Диалог с EditText для ввода текста новой заметки
     private void showAddDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
         builder.setTitle("Новая заметка");
@@ -63,6 +67,8 @@ public class FileWorkerFragment extends Fragment {
         builder.show();
     }
 
+    // Сохраняет текст в файл note_<timestamp>.txt во внутреннем хранилище
+    // openFileOutput = FileOutputStream в app-specific internal storage
     private void saveNote(String text) {
         String fileName = "note_" + System.currentTimeMillis() + ".txt";
         try (FileOutputStream fos = requireContext().openFileOutput(fileName, 0)) {
@@ -74,6 +80,8 @@ public class FileWorkerFragment extends Fragment {
         }
     }
 
+    // Читает список .txt файлов из внутреннего хранилища
+    // и показывает их первую строку как заголовок
     private void showNotes() {
         notesContainer.removeAllViews();
 
@@ -123,6 +131,8 @@ public class FileWorkerFragment extends Fragment {
         }
     }
 
+    // По клику на заметку — читает весь файл и показывает
+    // содержимое + статистику (символы, слова, размер)
     private void showNote(File file) {
         StringBuilder content = new StringBuilder();
         try (BufferedReader reader = new BufferedReader(

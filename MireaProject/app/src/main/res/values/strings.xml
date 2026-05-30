@@ -26,7 +26,15 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="menu_profile">Профиль</string>
-    <string name="menu_files">Работа с файлами</string>
+    <string name="menu_files">Заметки</string>
+    <string name="menu_data">О дневнике</string>
+    <string name="menu_web">Афиша Москвы</string>
+    <string name="menu_music">Музыка</string>
+    <string name="menu_sensor">Датчики</string>
+    <string name="menu_camera">Камера</string>
+    <string name="menu_recorder">Диктофон</string>
+    <string name="menu_network">Сетевые данные</string>
+    <string name="menu_places">Заведения</string>
 
     <string-array name="genres">
         <item>Экшн</item>

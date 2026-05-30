@@ -13,17 +13,15 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.mirea.shelmichas.mireaproject.databinding.ActivityLoginBinding;
 
-import java.util.Objects;
-
-// Экран входа в приложение через Firebase Authentication
+// Экран входа/регистрации через Firebase Authentication
 public class LoginActivity extends AppCompatActivity {
 
     private static final String TAG = LoginActivity.class.getSimpleName();
     private ActivityLoginBinding binding;
     private FirebaseAuth mAuth;
+    private boolean isAuthInProgress = false; // защита от двойного клика
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -31,7 +29,6 @@ public class LoginActivity extends AppCompatActivity {
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        // Инициализация FirebaseAuth
         mAuth = FirebaseAuth.getInstance();
 
         binding.buttonSignIn.setOnClickListener(new View.OnClickListener() {
@@ -54,63 +51,64 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser != null) {
-            // Если уже вошёл — сразу на главный экран
+        // Если уже вошёл — сразу на главную (с защитой isFinishing)
+        if (mAuth.getCurrentUser() != null && !isFinishing()) {
             startMainActivity();
         }
     }
 
-    // Регистрация нового пользователя
+    // Регистрация — isAuthInProgress блокирует двойной клик
     private void createAccount(String email, String password) {
         Log.d(TAG, "createAccount:" + email);
-        if (!validateForm()) return;
+        if (!validateForm() || isAuthInProgress) return;
+        isAuthInProgress = true;
 
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(Task<AuthResult> task) {
+                        isAuthInProgress = false;
                         if (task.isSuccessful()) {
-                            Log.d(TAG, "createUserWithEmail:success");
                             startMainActivity();
                         } else {
-                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(LoginActivity.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this,
+                                    "Ошибка: " + task.getException().getMessage(),
+                                    Toast.LENGTH_LONG).show();
                         }
                     }
                 });
     }
 
-    // Вход в существующий аккаунт
+    // Вход — isAuthInProgress блокирует двойной клик
     private void signIn(String email, String password) {
         Log.d(TAG, "signIn:" + email);
-        if (!validateForm()) return;
+        if (!validateForm() || isAuthInProgress) return;
+        isAuthInProgress = true;
 
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(Task<AuthResult> task) {
+                        isAuthInProgress = false;
                         if (task.isSuccessful()) {
-                            Log.d(TAG, "signInWithEmail:success");
                             startMainActivity();
                         } else {
-                            Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(LoginActivity.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this,
+                                    "Ошибка: " + task.getException().getMessage(),
+                                    Toast.LENGTH_LONG).show();
                         }
                     }
                 });
     }
 
-    // Переход на главный экран приложения
+    // Защита: не стартуем MainActivity если Activity уже умирает
     private void startMainActivity() {
+        if (isFinishing() || isDestroyed()) return;
         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(intent);
-        finish(); // закрываем LoginActivity, чтобы нельзя было вернуться назад
+        finish();
     }
 
-    // Валидация полей
     private boolean validateForm() {
         boolean valid = true;
         String email = binding.fieldEmail.getText().toString();

@@ -22,7 +22,7 @@ public class WebViewFragment extends Fragment {
 
         WebView webView = view.findViewById(R.id.webView);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("https://www.mirea.ru");
+        webView.loadUrl("https://kudamoscow.ru");
 
         return view;
     }

@@ -9,6 +9,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.yandex.mapkit.MapKitFactory;
 
 import androidx.annotation.NonNull;
 import androidx.navigation.NavController;
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         if (navigationView != null) {
             mAppBarConfiguration = new AppBarConfiguration.Builder(
                     R.id.nav_transform, R.id.nav_reflow, R.id.nav_slideshow, R.id.nav_settings,
-                    R.id.nav_data,      // добавлено
+                    R.id.nav_data,
                     R.id.nav_web,
                     R.id.nav_music,
                     R.id.nav_sensor,
@@ -52,7 +53,8 @@ public class MainActivity extends AppCompatActivity {
                     R.id.nav_recorder,
                     R.id.nav_profile,
                     R.id.nav_files,
-                    R.id.nav_network)
+                    R.id.nav_network,
+                    R.id.nav_places)
                     .setOpenableLayout(binding.drawerLayout)
                     .build();
             NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
@@ -100,5 +102,17 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        MapKitFactory.getInstance().onStart();
+    }
+
+    @Override
+    protected void onStop() {
+        MapKitFactory.getInstance().onStop();
+        super.onStop();
     }
 }

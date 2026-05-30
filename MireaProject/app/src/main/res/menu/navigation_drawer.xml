@@ -24,39 +24,43 @@
         <item
             android:id="@+id/nav_data"
             android:icon="@drawable/ic_launcher_foreground"
-            android:title="Data Fragment" />
+            android:title="@string/menu_data" />
         <item
             android:id="@+id/nav_web"
             android:icon="@drawable/ic_launcher_foreground"
-            android:title="Browser" />
+            android:title="@string/menu_web" />
         <item
             android:id="@+id/nav_music"
             android:icon="@drawable/ic_launcher_foreground"
-            android:title="Music" />
+            android:title="@string/menu_music" />
         <item
             android:id="@+id/nav_sensor"
             android:icon="@drawable/ic_launcher_foreground"
-            android:title="Sensor" />
+            android:title="@string/menu_sensor" />
         <item
             android:id="@+id/nav_camera"
             android:icon="@drawable/ic_camera_black_24dp"
-            android:title="Camera" />
+            android:title="@string/menu_camera" />
         <item
             android:id="@+id/nav_recorder"
             android:icon="@drawable/ic_launcher_foreground"
-            android:title="Recorder" />
+            android:title="@string/menu_recorder" />
         <item
             android:id="@+id/nav_profile"
             android:icon="@drawable/ic_launcher_foreground"
-            android:title="Профиль" />
+            android:title="@string/menu_profile" />
         <item
             android:id="@+id/nav_files"
             android:icon="@drawable/ic_launcher_foreground"
-            android:title="Работа с файлами" />
+            android:title="@string/menu_files" />
         <item
             android:id="@+id/nav_network"
             android:icon="@drawable/ic_launcher_foreground"
-            android:title="Сетевые данные" />
+            android:title="@string/menu_network" />
+        <item
+            android:id="@+id/nav_places"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="@string/menu_places" />
     </group>
 
     <item

@@ -12,7 +12,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Информационные технологии"
+            android:text="Культурный дневник"
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="?attr/colorPrimary"
@@ -21,7 +21,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Навыки:\n• Java\n• Android\n• UI/UX\n• Работа с базами данных"
+            android:text="Ваш персональный путеводитель по культурной жизни Москвы.\n\nЗдесь вы найдёте афишу мероприятий, карту знаковых мест, аудиогид, фотографии и заметки о впечатлениях. Открывайте для себя столицу вместе с Культурным дневником!"
             android:textSize="16sp"
             android:lineSpacingExtra="4dp"/>
 

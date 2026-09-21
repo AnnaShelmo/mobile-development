@@ -1,0 +1,115 @@
+<mxfile host="app.diagrams.net" agent="opencode">
+  <diagram id="nocturne-layers" name="Слои">
+    <mxGraphModel dx="1144" dy="631" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1350" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=16;" value="Декомпозиция Nocturne на слои" vertex="1">
+          <mxGeometry height="30" width="400" x="200" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="presBox" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;verticalAlign=top;" value="" vertex="1">
+          <mxGeometry height="260" width="900" x="200" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="presTitle" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=14;" value="Presentation — экраны и UI" vertex="1">
+          <mxGeometry height="24" width="300" x="212" y="92" as="geometry" />
+        </mxCell>
+        <mxCell id="pin1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="Экраны: MainActivity (сейчас) + (будущее) Login, Places, PlaceDetails, Favorites, Scanner" vertex="1">
+          <mxGeometry height="40" width="780" x="260" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="pin2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontStyle=2;" value="(будущее) Presenter / ViewModel — управление состоянием экрана, события UI → use case" vertex="1">
+          <mxGeometry height="40" width="780" x="260" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="pin3" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=3;fontSize=12;" value="Экран обращается только к domain через use case" vertex="1">
+          <mxGeometry height="22" width="400" x="260" y="262" as="geometry" />
+        </mxCell>
+        <mxCell id="domBox" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=top;" value="" vertex="1">
+          <mxGeometry height="380" width="900" x="200" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="domTitle" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=14;" value="Domain — бизнес-логика (ни от чего не зависит)" vertex="1">
+          <mxGeometry height="24" width="400" x="212" y="472" as="geometry" />
+        </mxCell>
+        <mxCell id="din1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="Place — Entity" vertex="1">
+          <mxGeometry height="40" width="240" x="260" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="din2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="PlaceRepository — интерфейс (контракт данных)" vertex="1">
+          <mxGeometry height="40" width="280" x="540" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="din3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="GetPlacesUseCase" vertex="1">
+          <mxGeometry height="34" width="200" x="260" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="din4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="GetPlaceUseCase" vertex="1">
+          <mxGeometry height="34" width="200" x="490" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="din5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="SearchPlacesUseCase" vertex="1">
+          <mxGeometry height="34" width="220" x="720" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="din6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;dashed=1;fontSize=12;fontStyle=2;" value="(будущее) AddFavorite, RemoveFavorite, GetFavorites, RecognizeUseCase — по одному классу на каждый use case диаграммы" vertex="1">
+          <mxGeometry height="40" width="700" x="260" y="654" as="geometry" />
+        </mxCell>
+        <mxCell id="din7" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=3;fontSize=12;" value="Доменное правило: use case зависят только от интерфейса PlaceRepository и модели Place" vertex="1">
+          <mxGeometry height="22" width="620" x="260" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="din8" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=2;fontSize=12;" value="Слой не зависит от Android, Context, БД и сети" vertex="1">
+          <mxGeometry height="22" width="400" x="260" y="762" as="geometry" />
+        </mxCell>
+        <mxCell id="dataBox" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;verticalAlign=top;" value="" vertex="1">
+          <mxGeometry height="340" width="900" x="200" y="960" as="geometry" />
+        </mxCell>
+        <mxCell id="dataTitle" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=14;" value="Data — хранение и источники данных" vertex="1">
+          <mxGeometry height="24" width="400" x="212" y="972" as="geometry" />
+        </mxCell>
+        <mxCell id="dta1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="PlaceRepositoryImpl — реализация интерфейса" vertex="1">
+          <mxGeometry height="40" width="280" x="260" y="1020" as="geometry" />
+        </mxCell>
+        <mxCell id="dta2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="Remote: PlaceRemoteDataSource (JSON-API)" vertex="1">
+          <mxGeometry height="40" width="300" x="580" y="1020" as="geometry" />
+        </mxCell>
+        <mxCell id="dta3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="Local: PlaceLocalDataSource (БД)" vertex="1">
+          <mxGeometry height="40" width="200" x="880" y="1020" as="geometry" />
+        </mxCell>
+        <mxCell id="dta4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="Memory: тестовые данные (реализовано сейчас)" vertex="1">
+          <mxGeometry height="40" width="300" x="260" y="1090" as="geometry" />
+        </mxCell>
+        <mxCell id="dta5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="PlaceDto + Mapper (DTO → Entity)" vertex="1">
+          <mxGeometry height="40" width="320" x="600" y="1090" as="geometry" />
+        </mxCell>
+        <mxCell id="dta6" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=3;fontSize=12;" value="Данные создаются в Repository и передаются в use case как Entity (модель из domain)" vertex="1">
+          <mxGeometry height="22" width="700" x="260" y="1160" as="geometry" />
+        </mxCell>
+        <mxCell id="dta7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#999999;dashed=1;fontSize=12;fontStyle=2;" value="Repository Pattern: выбор источника (Remote / Local / Memory)" vertex="1">
+          <mxGeometry height="34" width="500" x="260" y="1200" as="geometry" />
+        </mxCell>
+        <mxCell id="req1" edge="1" parent="1" source="presBox" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;fontSize=12;exitX=0.1111;exitY=1;entryX=0.1111;entryY=0;" target="domBox" value="запрос">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="req2" edge="1" parent="1" source="domBox" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;fontSize=12;exitX=0.1111;exitY=1;entryX=0.1111;entryY=0;" target="dataBox" value="запрос">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow1" edge="1" parent="1" source="domBox" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#FF0000;fontColor=#FF0000;fontSize=12;exitX=0.1778;exitY=0;entryX=0.1778;entryY=1;" target="presBox" value="данные (Entity)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="flow2" edge="1" parent="1" source="dataBox" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#FF0000;fontColor=#FF0000;fontSize=12;exitX=0.1778;exitY=0;entryX=0.1778;entryY=1;" target="domBox" value="данные (Entity)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep1" edge="1" parent="1" source="presBox" style="edgeStyle=none;html=1;dashed=1;endArrow=open;startArrow=none;strokeColor=#000000;fontStyle=1;fontSize=12;exitX=0.8889;exitY=1;entryX=0.8889;entryY=0;" target="domBox" value="зависит">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep2" edge="1" parent="1" source="dataBox" style="edgeStyle=none;html=1;dashed=1;endArrow=open;startArrow=none;strokeColor=#000000;fontStyle=1;fontSize=12;exitX=0.8889;exitY=0;entryX=0.8889;entryY=1;" target="domBox" value="зависит">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="esrc1" edge="1" parent="1" source="dta1" style="edgeStyle=none;html=1;dashed=1;endArrow=classic;startArrow=none;strokeColor=#000000;fontSize=11;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="dta2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="esrc2" edge="1" parent="1" source="dta1" style="edgeStyle=none;html=1;dashed=1;endArrow=classic;startArrow=none;strokeColor=#000000;fontSize=11;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="dta4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="esrc3" edge="1" parent="1" source="dta2" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;fontSize=11;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="dta5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="esrc4" edge="1" parent="1" source="dta4" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;fontSize=11;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="dta5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

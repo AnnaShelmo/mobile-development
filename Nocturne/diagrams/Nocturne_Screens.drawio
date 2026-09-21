@@ -1,0 +1,76 @@
+<mxfile host="app.diagrams.net" agent="opencode">
+  <diagram id="nocturne-screens" name="Экраны">
+    <mxGraphModel dx="2412" dy="668" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=16;" value="Экраны Nocturne и их зоны ответственности" vertex="1">
+          <mxGeometry height="30" width="500" x="50" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="welcome" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#000000;fontStyle=1;fontSize=13;" value="Welcome" vertex="1">
+          <mxGeometry height="100" width="200" x="50" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="welcomeR" parent="1" style="text;html=1;align=center;verticalAlign=top;fontSize=11;fontStyle=2;" value="Зона: точка входа; выбор — войти или продолжить как гость" vertex="1">
+          <mxGeometry height="40" width="200" x="50" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="login" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#000000;fontStyle=1;fontSize=13;" value="Login" vertex="1">
+          <mxGeometry height="100" width="200" x="520" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="loginR" parent="1" style="text;html=1;align=center;verticalAlign=top;fontSize=11;fontStyle=2;" value="Зона: аутентификация, управление сессией (авторизация)" vertex="1">
+          <mxGeometry height="40" width="200" x="710" y="189" as="geometry" />
+        </mxCell>
+        <mxCell id="home" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=14;" value="Home" vertex="1">
+          <mxGeometry height="120" width="320" x="400" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="homeR" parent="1" style="text;html=1;align=center;verticalAlign=top;fontSize=11;fontStyle=2;" value="Зона: навигационное ядро (каталог / поиск / сканер / избранное) и разграничение прав: для гостя «Избранное» скрыто" vertex="1">
+          <mxGeometry height="40" width="320" x="400" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="placesList" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=13;" value="PlacesList" vertex="1">
+          <mxGeometry height="100" width="240" x="80" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="placesListR" parent="1" style="text;html=1;align=center;verticalAlign=top;fontSize=11;fontStyle=2;" value="Зона: каталог мест с фото (список); поиск → SearchPlacesUseCase&#xa;Доступ: для всех" vertex="1">
+          <mxGeometry height="40" width="240" x="80" y="665" as="geometry" />
+        </mxCell>
+        <mxCell id="placeDetails" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=13;" value="PlaceDetails" vertex="1">
+          <mxGeometry height="100" width="250" x="360" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="placeDetailsR" parent="1" style="text;html=1;align=center;verticalAlign=top;fontSize=11;fontStyle=2;" value="Зона: информация о месте → GetPlaceUseCase; кнопка «избранное» — только для авторизованного" vertex="1">
+          <mxGeometry height="40" width="250" x="360" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="scanner" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;fontSize=13;" value="Scanner" vertex="1">
+          <mxGeometry height="100" width="230" x="650" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="scannerR" parent="1" style="text;html=1;align=center;verticalAlign=top;fontSize=11;fontStyle=2;" value="Зона: выбор/загрузка фото, распознавание → категория → результаты&#xa;Доступ: для всех" vertex="1">
+          <mxGeometry height="40" width="230" x="650" y="676" as="geometry" />
+        </mxCell>
+        <mxCell id="favorites" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=1;fontSize=13;" value="Favorites" vertex="1">
+          <mxGeometry height="100" width="240" x="900" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="favoritesR" parent="1" style="text;html=1;align=center;verticalAlign=top;fontSize=11;fontStyle=2;" value="Зона: список избранных мест → GetFavoritesUseCase&#xa;Доступ: только авторизованный пользователь" vertex="1">
+          <mxGeometry height="40" width="240" x="900" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="welcome" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;fontSize=11;" target="login" value="войти">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="welcome" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;fontSize=11;exitX=0.5;exitY=1;entryX=0;entryY=0;" target="home" value="продолжить как гость">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="login" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;exitX=0.5;exitY=1;entryX=0.15;entryY=0;" target="home">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="home" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;fontSize=11;exitX=0.35;exitY=1;entryX=0.5;entryY=0;" target="placesList" value="каталог">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="home" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;fontSize=11;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="placeDetails" value="страница места">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="home" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;fontSize=11;exitX=0.82;exitY=1;entryX=0.5;entryY=0;" target="scanner" value="распознать объект">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="home" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;fontSize=11;exitX=0.95;exitY=1;entryX=0.5;entryY=0;" target="favorites" value="избранное">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

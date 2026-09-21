@@ -1,0 +1,108 @@
+<mxfile host="app.diagrams.net" agent="opencode">
+  <diagram id="nocturne-usecase" name="Use Case">
+    <mxGraphModel dx="1873" dy="1033" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;verticalAlign=top;" value="" vertex="1">
+          <mxGeometry height="960" width="1000" x="200" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=14;" value="Система Nocturne" vertex="1">
+          <mxGeometry height="28" width="200" x="210" y="86" as="geometry" />
+        </mxCell>
+        <mxCell id="actorGuest" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fontSize=13;" value="Гость" vertex="1">
+          <mxGeometry height="120" width="80" x="60" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="actorUser" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fontSize=13;" value="Авторизованный&#xa;пользователь" vertex="1">
+          <mxGeometry height="120" width="80" x="1251" y="474" as="geometry" />
+        </mxCell>
+        <mxCell id="actorService" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fontSize=13;" value="Внешний сервис&#xa;(JSON-API)" vertex="1">
+          <mxGeometry height="110" width="80" x="1260" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="uc1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=13;" value="Просматривать каталог" vertex="1">
+          <mxGeometry height="80" width="240" x="260" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="uc2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=13;" value="Искать место" vertex="1">
+          <mxGeometry height="80" width="240" x="260" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="uc3" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=13;" value="Просматривать информацию о месте" vertex="1">
+          <mxGeometry height="80" width="240" x="260" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="uc4" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=13;" value="Авторизоваться" vertex="1">
+          <mxGeometry height="80" width="240" x="260" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="uc5" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=13;" value="Распознать объект" vertex="1">
+          <mxGeometry height="80" width="240" x="260" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="uc9" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=13;" value="Получить данные о местах" vertex="1">
+          <mxGeometry height="80" width="240" x="560" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="uc6" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=13;" value="Добавить место в избранное" vertex="1">
+          <mxGeometry height="80" width="240" x="560" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="uc7" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=13;" value="Удалить место из избранного" vertex="1">
+          <mxGeometry height="80" width="240" x="560" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="uc8" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=13;" value="Просматривать избранные места" vertex="1">
+          <mxGeometry height="80" width="240" x="560" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="uc10" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=13;" value="Выйти из аккаунта" vertex="1">
+          <mxGeometry height="80" width="240" x="560" y="790" as="geometry" />
+        </mxCell>
+        <mxCell id="guestCat" edge="1" parent="1" source="actorGuest" style="html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="uc1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="guestSearch" edge="1" parent="1" source="actorGuest" style="html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="uc2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="guestInfo" edge="1" parent="1" source="actorGuest" style="html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="uc3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="guestAuth" edge="1" parent="1" source="actorGuest" style="html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="uc4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="guestRecognize" edge="1" parent="1" source="actorGuest" style="html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="uc5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="userCat" edge="1" parent="1" source="actorUser" style="html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="uc1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="userSearch" edge="1" parent="1" source="actorUser" style="html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="uc2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="userInfo" edge="1" parent="1" source="actorUser" style="html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="uc3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="userRecognize" edge="1" parent="1" source="actorUser" style="html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="uc5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="userAdd" edge="1" parent="1" source="actorUser" style="html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="uc6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="userRemove" edge="1" parent="1" source="actorUser" style="html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="uc7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="userFavs" edge="1" parent="1" source="actorUser" style="html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="uc8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="userLogout" edge="1" parent="1" source="actorUser" style="html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="uc10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="svcGet" edge="1" parent="1" source="actorService" style="html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="uc9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="extendEdge" edge="1" parent="1" source="uc5" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=open;dashPattern=5 3;strokeColor=#000000;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" target="uc2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1015" y="700" />
+              <mxPoint x="1015" y="310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="extendLabel" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=2;fontSize=12;" value="«extend»" vertex="1">
+          <mxGeometry height="22" width="70" x="1020" y="480" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

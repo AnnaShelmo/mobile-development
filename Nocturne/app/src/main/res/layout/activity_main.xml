@@ -8,7 +8,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Каталог мест (тестовые данные)"
+        android:text="Каталог мест (Room + NetworkApi)"
         android:textSize="18sp"
         android:textStyle="bold" />
 
@@ -16,7 +16,70 @@
         android:id="@+id/textViewPlaces"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="16dp"
+        android:paddingTop="8dp"
         android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/fieldSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Поиск по названию, городу или стране (сеть)"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/buttonSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Найти" />
+
+    <TextView
+        android:id="@+id/textViewSearchStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="4dp"
+        android:textSize="14sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Информация о клиенте (SharedPreferences)"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/fieldClientName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Имя клиента"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/fieldClientPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Телефон клиента"
+        android:inputType="phone" />
+
+    <Button
+        android:id="@+id/buttonSaveClient"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Сохранить информацию о клиенте" />
+
+    <TextView
+        android:id="@+id/textViewClientInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Авторизация" />
 
 </LinearLayout>

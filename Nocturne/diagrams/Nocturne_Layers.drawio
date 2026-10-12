@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="opencode">
   <diagram id="nocturne-layers" name="Слои">
-    <mxGraphModel dx="1046" dy="810" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1350" math="0" shadow="0">
+    <mxGraphModel dx="2341" dy="1291" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1350" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -10,14 +10,11 @@
         <mxCell id="presBox" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;verticalAlign=top;" value="" vertex="1">
           <mxGeometry height="260" width="900" x="200" y="80" as="geometry" />
         </mxCell>
-        <mxCell id="presTitle" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=14;" value="Presentation — экраны и UI" vertex="1">
+        <mxCell id="presTitle" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=14;" value="ф" vertex="1">
           <mxGeometry height="24" width="300" x="212" y="92" as="geometry" />
         </mxCell>
-        <mxCell id="pin1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="Экраны: MainActivity (сейчас) + (будущее) Login, Places, PlaceDetails, Favorites, Scanner" vertex="1">
+        <mxCell id="pin1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="welcom" vertex="1">
           <mxGeometry height="40" width="780" x="260" y="140" as="geometry" />
-        </mxCell>
-        <mxCell id="pin2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontStyle=2;" value="(будущее) Presenter / ViewModel — управление состоянием экрана, события UI → use case" vertex="1">
-          <mxGeometry height="40" width="780" x="260" y="200" as="geometry" />
         </mxCell>
         <mxCell id="pin3" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=3;fontSize=12;" value="Экран обращается только к domain через use case" vertex="1">
           <mxGeometry height="22" width="400" x="260" y="262" as="geometry" />
@@ -107,6 +104,108 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="esrc4" edge="1" parent="1" source="dta4" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;fontSize=11;exitX=1;exitY=0.5;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitDx=0;exitDy=0;" target="dta5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BJJm0UI_1juXHb_h5Jop-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;verticalAlign=top;" value="" vertex="1">
+          <mxGeometry height="260" width="900" x="1231" y="72" as="geometry" />
+        </mxCell>
+        <mxCell id="BJJm0UI_1juXHb_h5Jop-4" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=14;" value="Presentation" vertex="1">
+          <mxGeometry height="24" width="300" x="1243" y="84" as="geometry" />
+        </mxCell>
+        <mxCell id="BJJm0UI_1juXHb_h5Jop-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="Экраны: MainActivity (сейчас) + (будущее) Login, Places, PlaceDetails, Favorites, Scanner" vertex="1">
+          <mxGeometry height="40" width="780" x="1291" y="132" as="geometry" />
+        </mxCell>
+        <mxCell id="BJJm0UI_1juXHb_h5Jop-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontStyle=2;" value="(будущее) Presenter / ViewModel — управление состоянием экрана, события UI → use case" vertex="1">
+          <mxGeometry height="40" width="780" x="1291" y="192" as="geometry" />
+        </mxCell>
+        <mxCell id="BJJm0UI_1juXHb_h5Jop-7" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=3;fontSize=12;" value="Экран обращается только к domain через use case" vertex="1">
+          <mxGeometry height="22" width="400" x="1291" y="254" as="geometry" />
+        </mxCell>
+        <mxCell id="BJJm0UI_1juXHb_h5Jop-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=top;" value="" vertex="1">
+          <mxGeometry height="380" width="900" x="1231" y="452" as="geometry" />
+        </mxCell>
+        <mxCell id="BJJm0UI_1juXHb_h5Jop-9" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=14;" value="Domain — бизнес-логика (ни от чего не зависит)" vertex="1">
+          <mxGeometry height="24" width="400" x="1243" y="464" as="geometry" />
+        </mxCell>
+        <mxCell id="BJJm0UI_1juXHb_h5Jop-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="Place — Entity" vertex="1">
+          <mxGeometry height="40" width="240" x="1291" y="512" as="geometry" />
+        </mxCell>
+        <mxCell id="BJJm0UI_1juXHb_h5Jop-11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="PlaceRepository — интерфейс (контракт данных)" vertex="1">
+          <mxGeometry height="40" width="280" x="1571" y="512" as="geometry" />
+        </mxCell>
+        <mxCell id="BJJm0UI_1juXHb_h5Jop-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="GetPlacesUseCase" vertex="1">
+          <mxGeometry height="34" width="200" x="1291" y="582" as="geometry" />
+        </mxCell>
+        <mxCell id="BJJm0UI_1juXHb_h5Jop-13" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="GetPlaceUseCase" vertex="1">
+          <mxGeometry height="34" width="200" x="1521" y="582" as="geometry" />
+        </mxCell>
+        <mxCell id="BJJm0UI_1juXHb_h5Jop-14" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="SearchPlacesUseCase" vertex="1">
+          <mxGeometry height="34" width="220" x="1751" y="582" as="geometry" />
+        </mxCell>
+        <mxCell id="BJJm0UI_1juXHb_h5Jop-15" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;dashed=1;fontSize=12;fontStyle=2;" value="(будущее) AddFavorite, RemoveFavorite, GetFavorites, RecognizeUseCase — по одному классу на каждый use case диаграммы" vertex="1">
+          <mxGeometry height="40" width="700" x="1291" y="646" as="geometry" />
+        </mxCell>
+        <mxCell id="BJJm0UI_1juXHb_h5Jop-16" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=3;fontSize=12;" value="Доменное правило: use case зависят только от интерфейса PlaceRepository и модели Place" vertex="1">
+          <mxGeometry height="22" width="620" x="1291" y="722" as="geometry" />
+        </mxCell>
+        <mxCell id="BJJm0UI_1juXHb_h5Jop-17" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=2;fontSize=12;" value="Слой не зависит от Android, Context, БД и сети" vertex="1">
+          <mxGeometry height="22" width="400" x="1291" y="754" as="geometry" />
+        </mxCell>
+        <mxCell id="BJJm0UI_1juXHb_h5Jop-18" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;verticalAlign=top;" value="" vertex="1">
+          <mxGeometry height="340" width="900" x="1231" y="952" as="geometry" />
+        </mxCell>
+        <mxCell id="BJJm0UI_1juXHb_h5Jop-19" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=14;" value="Data — хранение и источники данных" vertex="1">
+          <mxGeometry height="24" width="400" x="1243" y="964" as="geometry" />
+        </mxCell>
+        <mxCell id="BJJm0UI_1juXHb_h5Jop-20" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="PlaceRepositoryImpl — реализация интерфейса" vertex="1">
+          <mxGeometry height="40" width="280" x="1271" y="1012" as="geometry" />
+        </mxCell>
+        <mxCell id="BJJm0UI_1juXHb_h5Jop-21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="Remote: PlaceRemoteDataSource (JSON-API)" vertex="1">
+          <mxGeometry height="40" width="300" x="1611" y="1012" as="geometry" />
+        </mxCell>
+        <mxCell id="BJJm0UI_1juXHb_h5Jop-22" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="Local: PlaceLocalDataSource (БД)" vertex="1">
+          <mxGeometry height="40" width="200" x="1924" y="1012" as="geometry" />
+        </mxCell>
+        <mxCell id="BJJm0UI_1juXHb_h5Jop-23" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="Memory: тестовые данные (реализовано сейчас)" vertex="1">
+          <mxGeometry height="40" width="300" x="1261" y="1082" as="geometry" />
+        </mxCell>
+        <mxCell id="BJJm0UI_1juXHb_h5Jop-24" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="PlaceDto + Mapper (DTO → Entity)" vertex="1">
+          <mxGeometry height="40" width="320" x="1611" y="1082" as="geometry" />
+        </mxCell>
+        <mxCell id="BJJm0UI_1juXHb_h5Jop-25" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=3;fontSize=12;" value="Данные создаются в Repository и передаются в use case как Entity (модель из domain)" vertex="1">
+          <mxGeometry height="22" width="700" x="1291" y="1152" as="geometry" />
+        </mxCell>
+        <mxCell id="BJJm0UI_1juXHb_h5Jop-26" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#999999;dashed=1;fontSize=12;fontStyle=2;" value="Repository Pattern: выбор источника (Remote / Local / Memory)" vertex="1">
+          <mxGeometry height="34" width="500" x="1291" y="1192" as="geometry" />
+        </mxCell>
+        <mxCell id="BJJm0UI_1juXHb_h5Jop-27" edge="1" parent="1" source="BJJm0UI_1juXHb_h5Jop-3" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;fontSize=12;exitX=0.1111;exitY=1;entryX=0.1111;entryY=0;" target="BJJm0UI_1juXHb_h5Jop-8" value="запрос">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BJJm0UI_1juXHb_h5Jop-28" edge="1" parent="1" source="BJJm0UI_1juXHb_h5Jop-8" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;fontSize=12;exitX=0.1111;exitY=1;entryX=0.1111;entryY=0;" target="BJJm0UI_1juXHb_h5Jop-18" value="запрос">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BJJm0UI_1juXHb_h5Jop-29" edge="1" parent="1" source="BJJm0UI_1juXHb_h5Jop-8" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#FF0000;fontColor=#FF0000;fontSize=12;exitX=0.1778;exitY=0;entryX=0.1778;entryY=1;" target="BJJm0UI_1juXHb_h5Jop-3" value="данные (Entity)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BJJm0UI_1juXHb_h5Jop-30" edge="1" parent="1" source="BJJm0UI_1juXHb_h5Jop-18" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#FF0000;fontColor=#FF0000;fontSize=12;exitX=0.1778;exitY=0;entryX=0.1778;entryY=1;" target="BJJm0UI_1juXHb_h5Jop-8" value="данные (Entity)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BJJm0UI_1juXHb_h5Jop-31" edge="1" parent="1" source="BJJm0UI_1juXHb_h5Jop-3" style="edgeStyle=none;html=1;dashed=1;endArrow=open;startArrow=none;strokeColor=#000000;fontStyle=1;fontSize=12;exitX=0.8889;exitY=1;entryX=0.8889;entryY=0;" target="BJJm0UI_1juXHb_h5Jop-8" value="зависит">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BJJm0UI_1juXHb_h5Jop-32" edge="1" parent="1" source="BJJm0UI_1juXHb_h5Jop-18" style="edgeStyle=none;html=1;dashed=1;endArrow=open;startArrow=none;strokeColor=#000000;fontStyle=1;fontSize=12;exitX=0.8889;exitY=0;entryX=0.8889;entryY=1;" target="BJJm0UI_1juXHb_h5Jop-8" value="зависит">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BJJm0UI_1juXHb_h5Jop-33" edge="1" parent="1" source="BJJm0UI_1juXHb_h5Jop-20" style="edgeStyle=none;html=1;dashed=1;endArrow=classic;startArrow=none;strokeColor=#000000;fontSize=11;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="BJJm0UI_1juXHb_h5Jop-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BJJm0UI_1juXHb_h5Jop-34" edge="1" parent="1" source="BJJm0UI_1juXHb_h5Jop-20" style="edgeStyle=none;html=1;dashed=1;endArrow=classic;startArrow=none;strokeColor=#000000;fontSize=11;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="BJJm0UI_1juXHb_h5Jop-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BJJm0UI_1juXHb_h5Jop-35" edge="1" parent="1" source="BJJm0UI_1juXHb_h5Jop-21" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;fontSize=11;exitX=0.5;exitY=1;entryX=0.464;entryY=0.077;entryDx=0;entryDy=0;entryPerimeter=0;exitDx=0;exitDy=0;" target="BJJm0UI_1juXHb_h5Jop-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BJJm0UI_1juXHb_h5Jop-36" edge="1" parent="1" source="BJJm0UI_1juXHb_h5Jop-23" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;fontSize=11;exitX=1;exitY=0.5;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitDx=0;exitDy=0;" target="BJJm0UI_1juXHb_h5Jop-24">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>

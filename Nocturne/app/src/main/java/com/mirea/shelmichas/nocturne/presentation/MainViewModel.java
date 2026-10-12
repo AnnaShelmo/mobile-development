@@ -24,7 +24,7 @@ public class MainViewModel extends ViewModel {
     private final MutableLiveData<List<Place>> roomPlacesSource = new MutableLiveData<>();
     private final MutableLiveData<List<Place>> networkPlacesSource = new MutableLiveData<>();
 
-    // Объединяет данные из обоих источников
+    // MediatorLiveData Объединяет данные из обоих источников
     private final MediatorLiveData<List<Place>> places = new MediatorLiveData<>();
 
     private final MutableLiveData<String> clientInfo = new MutableLiveData<>();
@@ -33,8 +33,8 @@ public class MainViewModel extends ViewModel {
 
     public MainViewModel(PlaceRepository placeRepository) {
         this.placeRepository = placeRepository;
-        places.addSource(roomPlacesSource, source -> mergeSources());
-        places.addSource(networkPlacesSource, source -> mergeSources());
+        places.addSource(roomPlacesSource, source -> mergeSources()); //подключение
+        places.addSource(networkPlacesSource, source -> mergeSources()); //подключение
         loadPlaces();
         loadClientInfo();
     }
@@ -84,6 +84,7 @@ public class MainViewModel extends ViewModel {
         clientInfo.setValue("Инфо о клиенте: " + info.getName() + ", " + info.getPhone());
     }
 
+    // склеивает БД + сеть, пишет в places
     private void mergeSources() {
         List<Place> result = new ArrayList<>();
         if (roomPlacesSource.getValue() != null) {

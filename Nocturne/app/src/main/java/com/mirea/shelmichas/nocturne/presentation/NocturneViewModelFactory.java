@@ -19,7 +19,7 @@ import com.mirea.shelmichas.nocturne.domain.repository.PlaceRepository;
 
 public class NocturneViewModelFactory implements ViewModelProvider.Factory {
 
-    private final Context context;
+    private final Context context; // Activity передаётся сюда, но в ViewModel не попадает
 
     public NocturneViewModelFactory(Context context) {
         this.context = context;
@@ -33,7 +33,7 @@ public class NocturneViewModelFactory implements ViewModelProvider.Factory {
             ClientStorage clientStorage = new SharedPrefClientStorage(context);
             PlaceRepository placeRepository =
                     new PlaceRepositoryImpl(placeStorage, clientStorage, new NetworkApi());
-            return (T) new MainViewModel(placeRepository);
+            return (T) new MainViewModel(placeRepository); // ← ViewModel получает только репозиторий
         }
         if (modelClass.isAssignableFrom(LoginViewModel.class)) {
             AuthRepository authRepository = new AuthRepositoryImpl();

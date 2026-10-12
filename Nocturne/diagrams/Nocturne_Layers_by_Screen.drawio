@@ -1,0 +1,377 @@
+<mxfile host="app.diagrams.net" agent="opencode">
+  <diagram id="login" name="1 Login">
+      <mxGraphModel dx="1400" dy="1000" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="626" math="0" shadow="0">
+        <root>
+          <mxCell id="0" />
+          <mxCell id="1" parent="0" />
+        <mxCell id="login-title" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=16;" value="Слои экрана &quot;Login&quot;" vertex="1">
+          <mxGeometry x="60" y="14" width="700" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="login-pbox" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+          <mxGeometry x="60" y="70" width="740" height="108" as="geometry" />
+        </mxCell>
+        <mxCell id="login-phdr" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=14;" value="Presentation" vertex="1">
+          <mxGeometry x="72" y="80" width="600" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="login-p-0" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="Login — экран входа: e-mail, пароль, кнопки «Войти» и «Зайти как гость»" vertex="1">
+          <mxGeometry x="80" y="116" width="710" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="login-dbox" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="" vertex="1">
+          <mxGeometry x="60" y="248" width="740" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="login-dhdr" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=14;" value="Domain" vertex="1">
+          <mxGeometry x="72" y="258" width="640" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="login-d-0" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="SignInUseCase / SignUpUseCase — вход и регистрация" vertex="1">
+          <mxGeometry x="80" y="294" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="login-d-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="SignOutUseCase / IsLoggedInUseCase — выход и проверка входа" vertex="1">
+          <mxGeometry x="440" y="294" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="login-d-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="AuthRepository — интерфейс доступа к аккаунтам" vertex="1">
+          <mxGeometry x="80" y="346" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="login-tbox" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#d5e8d4;strokeColor=#82b366;" value="" vertex="1">
+          <mxGeometry x="60" y="478" width="740" height="108" as="geometry" />
+        </mxCell>
+        <mxCell id="login-thdr" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=14;" value="Data" vertex="1">
+          <mxGeometry x="72" y="488" width="600" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="login-t-0" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="AuthRepositoryImpl — репозиторий авторизации" vertex="1">
+          <mxGeometry x="80" y="524" width="710" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="login-e1" edge="1" parent="1" source="login-pbox" target="login-dbox" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;fontSize=12;exitX=0.12;exitY=1;entryX=0.12;entryY=0;" value="запрос">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="login-e2" edge="1" parent="1" source="login-dbox" target="login-pbox" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#FF0000;fontColor=#FF0000;fontSize=12;exitX=0.24;exitY=0;entryX=0.24;entryY=1;" value="данные">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="login-e3" edge="1" parent="1" source="login-dbox" target="login-tbox" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;fontSize=12;exitX=0.12;exitY=1;entryX=0.12;entryY=0;" value="запрос">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="login-e4" edge="1" parent="1" source="login-tbox" target="login-dbox" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#FF0000;fontColor=#FF0000;fontSize=12;exitX=0.24;exitY=0;entryX=0.24;entryY=1;" value="данные">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="home" name="2 Home">
+      <mxGraphModel dx="1400" dy="1000" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="678" math="0" shadow="0">
+        <root>
+          <mxCell id="0" />
+          <mxCell id="1" parent="0" />
+        <mxCell id="home-title" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=16;" value="Слои экрана &quot;Home&quot;" vertex="1">
+          <mxGeometry x="60" y="14" width="700" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="home-pbox" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+          <mxGeometry x="60" y="70" width="740" height="108" as="geometry" />
+        </mxCell>
+        <mxCell id="home-phdr" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=14;" value="Presentation" vertex="1">
+          <mxGeometry x="72" y="80" width="600" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="home-p-0" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="Home — главный экран: переходы к каталогу, поиску, сканеру и избранному" vertex="1">
+          <mxGeometry x="80" y="116" width="710" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="home-dbox" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="" vertex="1">
+          <mxGeometry x="60" y="248" width="740" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="home-dhdr" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=14;" value="Domain" vertex="1">
+          <mxGeometry x="72" y="258" width="640" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="home-d-0" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="GetPlacesUseCase — получить список мест" vertex="1">
+          <mxGeometry x="80" y="294" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="home-d-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="SearchPlacesUseCase — найти место" vertex="1">
+          <mxGeometry x="440" y="294" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="home-d-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="IsLoggedInUseCase — гость или авторизован" vertex="1">
+          <mxGeometry x="80" y="346" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="home-d-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="PlaceRepository — интерфейс доступа к данным" vertex="1">
+          <mxGeometry x="440" y="346" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="home-tbox" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#d5e8d4;strokeColor=#82b366;" value="" vertex="1">
+          <mxGeometry x="60" y="478" width="740" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="home-thdr" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=14;" value="Data" vertex="1">
+          <mxGeometry x="72" y="488" width="600" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="home-t-0" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="PlaceRepositoryImpl — репозиторий мест" vertex="1">
+          <mxGeometry x="80" y="524" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="home-t-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="PlaceStorage — хранилище мест (БД)" vertex="1">
+          <mxGeometry x="440" y="524" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="home-t-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="NetworkApi — источник данных из сети" vertex="1">
+          <mxGeometry x="80" y="576" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="home-e1" edge="1" parent="1" source="home-pbox" target="home-dbox" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;fontSize=12;exitX=0.12;exitY=1;entryX=0.12;entryY=0;" value="запрос">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="home-e2" edge="1" parent="1" source="home-dbox" target="home-pbox" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#FF0000;fontColor=#FF0000;fontSize=12;exitX=0.24;exitY=0;entryX=0.24;entryY=1;" value="данные">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="home-e3" edge="1" parent="1" source="home-dbox" target="home-tbox" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;fontSize=12;exitX=0.12;exitY=1;entryX=0.12;entryY=0;" value="запрос">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="home-e4" edge="1" parent="1" source="home-tbox" target="home-dbox" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#FF0000;fontColor=#FF0000;fontSize=12;exitX=0.24;exitY=0;entryX=0.24;entryY=1;" value="данные">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="places" name="3 PlacesList">
+      <mxGraphModel dx="1400" dy="1000" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="678" math="0" shadow="0">
+        <root>
+          <mxCell id="0" />
+          <mxCell id="1" parent="0" />
+        <mxCell id="places-title" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=16;" value="Слои экрана &quot;PlacesList&quot;" vertex="1">
+          <mxGeometry x="60" y="14" width="700" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="places-pbox" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+          <mxGeometry x="60" y="70" width="740" height="108" as="geometry" />
+        </mxCell>
+        <mxCell id="places-phdr" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=14;" value="Presentation" vertex="1">
+          <mxGeometry x="72" y="80" width="600" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="places-p-0" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="PlacesList — каталог мест: список с фото и поиск" vertex="1">
+          <mxGeometry x="80" y="116" width="710" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="places-dbox" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="" vertex="1">
+          <mxGeometry x="60" y="248" width="740" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="places-dhdr" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=14;" value="Domain" vertex="1">
+          <mxGeometry x="72" y="258" width="640" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="places-d-0" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="GetPlacesUseCase — получить каталог мест" vertex="1">
+          <mxGeometry x="80" y="294" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="places-d-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="SearchPlacesUseCase — поиск по названию и городу" vertex="1">
+          <mxGeometry x="440" y="294" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="places-d-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="Place — модель места (сущность)" vertex="1">
+          <mxGeometry x="80" y="346" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="places-d-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="PlaceRepository — интерфейс доступа к данным" vertex="1">
+          <mxGeometry x="440" y="346" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="places-tbox" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#d5e8d4;strokeColor=#82b366;" value="" vertex="1">
+          <mxGeometry x="60" y="478" width="740" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="places-thdr" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=14;" value="Data" vertex="1">
+          <mxGeometry x="72" y="488" width="600" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="places-t-0" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="PlaceRepositoryImpl — репозиторий мест" vertex="1">
+          <mxGeometry x="80" y="524" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="places-t-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="PlaceStorage — локальное хранилище (БД)" vertex="1">
+          <mxGeometry x="440" y="524" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="places-t-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="NetworkApi — внешний сервис (JSON)" vertex="1">
+          <mxGeometry x="80" y="576" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="places-e1" edge="1" parent="1" source="places-pbox" target="places-dbox" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;fontSize=12;exitX=0.12;exitY=1;entryX=0.12;entryY=0;" value="запрос">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="places-e2" edge="1" parent="1" source="places-dbox" target="places-pbox" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#FF0000;fontColor=#FF0000;fontSize=12;exitX=0.24;exitY=0;entryX=0.24;entryY=1;" value="данные">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="places-e3" edge="1" parent="1" source="places-dbox" target="places-tbox" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;fontSize=12;exitX=0.12;exitY=1;entryX=0.12;entryY=0;" value="запрос">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="places-e4" edge="1" parent="1" source="places-tbox" target="places-dbox" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#FF0000;fontColor=#FF0000;fontSize=12;exitX=0.24;exitY=0;entryX=0.24;entryY=1;" value="данные">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="details" name="4 PlaceDetails">
+      <mxGraphModel dx="1400" dy="1000" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="678" math="0" shadow="0">
+        <root>
+          <mxCell id="0" />
+          <mxCell id="1" parent="0" />
+        <mxCell id="details-title" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=16;" value="Слои экрана &quot;PlaceDetails&quot;" vertex="1">
+          <mxGeometry x="60" y="14" width="700" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="details-pbox" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+          <mxGeometry x="60" y="70" width="740" height="108" as="geometry" />
+        </mxCell>
+        <mxCell id="details-phdr" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=14;" value="Presentation" vertex="1">
+          <mxGeometry x="72" y="80" width="600" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="details-p-0" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="PlaceDetails — карточка места: фото, описание, кнопка «В избранное»" vertex="1">
+          <mxGeometry x="80" y="116" width="710" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="details-dbox" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="" vertex="1">
+          <mxGeometry x="60" y="248" width="740" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="details-dhdr" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=14;" value="Domain" vertex="1">
+          <mxGeometry x="72" y="258" width="640" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="details-d-0" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="GetPlaceUseCase — получить место по идентификатору" vertex="1">
+          <mxGeometry x="80" y="294" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="details-d-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="AddFavoriteUseCase — добавить место в избранное" vertex="1">
+          <mxGeometry x="440" y="294" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="details-d-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="Place — модель места (сущность)" vertex="1">
+          <mxGeometry x="80" y="346" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="details-d-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="PlaceRepository — интерфейс доступа к данным" vertex="1">
+          <mxGeometry x="440" y="346" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="details-tbox" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#d5e8d4;strokeColor=#82b366;" value="" vertex="1">
+          <mxGeometry x="60" y="478" width="740" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="details-thdr" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=14;" value="Data" vertex="1">
+          <mxGeometry x="72" y="488" width="600" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="details-t-0" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="PlaceRepositoryImpl — репозиторий мест" vertex="1">
+          <mxGeometry x="80" y="524" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="details-t-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="PlaceStorage — хранилище избранного (БД)" vertex="1">
+          <mxGeometry x="440" y="524" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="details-t-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="NetworkApi — данные о месте из сети" vertex="1">
+          <mxGeometry x="80" y="576" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="details-e1" edge="1" parent="1" source="details-pbox" target="details-dbox" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;fontSize=12;exitX=0.12;exitY=1;entryX=0.12;entryY=0;" value="запрос">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="details-e2" edge="1" parent="1" source="details-dbox" target="details-pbox" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#FF0000;fontColor=#FF0000;fontSize=12;exitX=0.24;exitY=0;entryX=0.24;entryY=1;" value="данные">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="details-e3" edge="1" parent="1" source="details-dbox" target="details-tbox" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;fontSize=12;exitX=0.12;exitY=1;entryX=0.12;entryY=0;" value="запрос">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="details-e4" edge="1" parent="1" source="details-tbox" target="details-dbox" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#FF0000;fontColor=#FF0000;fontSize=12;exitX=0.24;exitY=0;entryX=0.24;entryY=1;" value="данные">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="scanner" name="5 Scanner">
+      <mxGraphModel dx="1400" dy="1000" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="678" math="0" shadow="0">
+        <root>
+          <mxCell id="0" />
+          <mxCell id="1" parent="0" />
+        <mxCell id="scanner-title" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=16;" value="Слои экрана &quot;Scanner&quot;" vertex="1">
+          <mxGeometry x="60" y="14" width="700" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="scanner-pbox" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+          <mxGeometry x="60" y="70" width="740" height="108" as="geometry" />
+        </mxCell>
+        <mxCell id="scanner-phdr" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=14;" value="Presentation" vertex="1">
+          <mxGeometry x="72" y="80" width="600" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="scanner-p-0" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="Scanner — распознавание объекта по фотографии" vertex="1">
+          <mxGeometry x="80" y="116" width="710" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="scanner-dbox" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="" vertex="1">
+          <mxGeometry x="60" y="248" width="740" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="scanner-dhdr" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=14;" value="Domain" vertex="1">
+          <mxGeometry x="72" y="258" width="640" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="scanner-d-0" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="RecognizeUseCase — распознать объект на изображении" vertex="1">
+          <mxGeometry x="80" y="294" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="scanner-d-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="Place — распознанное место" vertex="1">
+          <mxGeometry x="440" y="294" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="scanner-d-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="PlaceRepository — интерфейс доступа к данным" vertex="1">
+          <mxGeometry x="80" y="346" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="scanner-tbox" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#d5e8d4;strokeColor=#82b366;" value="" vertex="1">
+          <mxGeometry x="60" y="478" width="740" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="scanner-thdr" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=14;" value="Data" vertex="1">
+          <mxGeometry x="72" y="488" width="600" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="scanner-t-0" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="RecognizeModel — обученная модель (TensorFlow Lite)" vertex="1">
+          <mxGeometry x="80" y="524" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="scanner-t-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="PlaceRepositoryImpl — репозиторий мест" vertex="1">
+          <mxGeometry x="440" y="524" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="scanner-t-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="NetworkApi — запрос распознавания" vertex="1">
+          <mxGeometry x="80" y="576" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="scanner-e1" edge="1" parent="1" source="scanner-pbox" target="scanner-dbox" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;fontSize=12;exitX=0.12;exitY=1;entryX=0.12;entryY=0;" value="запрос">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="scanner-e2" edge="1" parent="1" source="scanner-dbox" target="scanner-pbox" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#FF0000;fontColor=#FF0000;fontSize=12;exitX=0.24;exitY=0;entryX=0.24;entryY=1;" value="данные">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="scanner-e3" edge="1" parent="1" source="scanner-dbox" target="scanner-tbox" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;fontSize=12;exitX=0.12;exitY=1;entryX=0.12;entryY=0;" value="запрос">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="scanner-e4" edge="1" parent="1" source="scanner-tbox" target="scanner-dbox" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#FF0000;fontColor=#FF0000;fontSize=12;exitX=0.24;exitY=0;entryX=0.24;entryY=1;" value="данные">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="favorites" name="6 Favorites">
+      <mxGraphModel dx="1400" dy="1000" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="626" math="0" shadow="0">
+        <root>
+          <mxCell id="0" />
+          <mxCell id="1" parent="0" />
+        <mxCell id="favorites-title" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=16;" value="Слои экрана &quot;Favorites&quot;" vertex="1">
+          <mxGeometry x="60" y="14" width="700" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="favorites-pbox" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+          <mxGeometry x="60" y="70" width="740" height="108" as="geometry" />
+        </mxCell>
+        <mxCell id="favorites-phdr" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=14;" value="Presentation" vertex="1">
+          <mxGeometry x="72" y="80" width="600" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="favorites-p-0" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="Favorites — список избранных мест (только авторизованным)" vertex="1">
+          <mxGeometry x="80" y="116" width="710" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="favorites-dbox" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="" vertex="1">
+          <mxGeometry x="60" y="248" width="740" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="favorites-dhdr" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=14;" value="Domain" vertex="1">
+          <mxGeometry x="72" y="258" width="640" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="favorites-d-0" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="GetFavoritesUseCase — получить список избранного" vertex="1">
+          <mxGeometry x="80" y="294" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="favorites-d-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="RemoveFavoriteUseCase — убрать место из избранного" vertex="1">
+          <mxGeometry x="440" y="294" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="favorites-d-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="IsLoggedInUseCase — проверка прав доступа" vertex="1">
+          <mxGeometry x="80" y="346" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="favorites-d-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="PlaceRepository — интерфейс доступа к данным" vertex="1">
+          <mxGeometry x="440" y="346" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="favorites-tbox" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#d5e8d4;strokeColor=#82b366;" value="" vertex="1">
+          <mxGeometry x="60" y="478" width="740" height="108" as="geometry" />
+        </mxCell>
+        <mxCell id="favorites-thdr" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=14;" value="Data" vertex="1">
+          <mxGeometry x="72" y="488" width="600" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="favorites-t-0" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="PlaceRepositoryImpl — репозиторий мест" vertex="1">
+          <mxGeometry x="80" y="524" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="favorites-t-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontSize=12;" value="PlaceStorage — хранилище избранного (БД)" vertex="1">
+          <mxGeometry x="440" y="524" width="350" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="favorites-e1" edge="1" parent="1" source="favorites-pbox" target="favorites-dbox" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;fontSize=12;exitX=0.12;exitY=1;entryX=0.12;entryY=0;" value="запрос">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="favorites-e2" edge="1" parent="1" source="favorites-dbox" target="favorites-pbox" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#FF0000;fontColor=#FF0000;fontSize=12;exitX=0.24;exitY=0;entryX=0.24;entryY=1;" value="данные">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="favorites-e3" edge="1" parent="1" source="favorites-dbox" target="favorites-tbox" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;fontSize=12;exitX=0.12;exitY=1;entryX=0.12;entryY=0;" value="запрос">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="favorites-e4" edge="1" parent="1" source="favorites-tbox" target="favorites-dbox" style="edgeStyle=none;html=1;endArrow=classic;startArrow=none;strokeColor=#FF0000;fontColor=#FF0000;fontSize=12;exitX=0.24;exitY=0;entryX=0.24;entryY=1;" value="данные">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

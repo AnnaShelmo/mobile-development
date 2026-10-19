@@ -25,8 +25,19 @@ public class PlaceRepositoryImpl implements PlaceRepository {
         this.networkApi = networkApi;
     }
 
+    // Каталог: ответ замоканного внешнего сервиса (NetworkApi)
     @Override
     public List<Place> getPlaces() {
+        List<Place> result = new ArrayList<>();
+        for (com.mirea.shelmichas.nocturne.data.storage.models.Place place : networkApi.getPlaces()) {
+            result.add(mapToDomain(place));
+        }
+        return result;
+    }
+
+    // Данные из локальной БД (Room)
+    @Override
+    public List<Place> getSavedPlaces() {
         List<Place> result = new ArrayList<>();
         for (com.mirea.shelmichas.nocturne.data.storage.models.Place place : placeStorage.getPlaces()) {
             result.add(mapToDomain(place));
@@ -36,7 +47,14 @@ public class PlaceRepositoryImpl implements PlaceRepository {
 
     @Override
     public Place getPlace(int id) {
-        return mapToDomain(placeStorage.getPlace(id));
+        com.mirea.shelmichas.nocturne.data.storage.models.Place place = networkApi.getPlace(id);
+        if (place == null) {
+            place = placeStorage.getPlace(id);
+        }
+        if (place == null) {
+            return null;
+        }
+        return mapToDomain(place);
     }
 
     // Поиск выполняется через сетевой сервис (NetworkApi с замоканными данными)

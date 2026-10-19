@@ -24,6 +24,9 @@
         <activity
             android:name=".presentation.LoginActivity"
             android:exported="false" />
+        <activity
+            android:name=".presentation.PlacesActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

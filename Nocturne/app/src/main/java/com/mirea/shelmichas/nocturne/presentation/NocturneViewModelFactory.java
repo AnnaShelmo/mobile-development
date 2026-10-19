@@ -29,16 +29,21 @@ public class NocturneViewModelFactory implements ViewModelProvider.Factory {
     @Override
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
         if (modelClass.isAssignableFrom(MainViewModel.class)) {
-            PlaceStorage placeStorage = new RoomPlaceStorage(AppDatabase.getInstance(context).placeDao());
-            ClientStorage clientStorage = new SharedPrefClientStorage(context);
-            PlaceRepository placeRepository =
-                    new PlaceRepositoryImpl(placeStorage, clientStorage, new NetworkApi());
-            return (T) new MainViewModel(placeRepository); // ← ViewModel получает только репозиторий
+            return (T) new MainViewModel(createPlaceRepository()); // ← ViewModel получает только репозиторий
+        }
+        if (modelClass.isAssignableFrom(PlacesViewModel.class)) {
+            return (T) new PlacesViewModel(createPlaceRepository()); // ← каталог: сервис + БД
         }
         if (modelClass.isAssignableFrom(LoginViewModel.class)) {
             AuthRepository authRepository = new AuthRepositoryImpl();
             return (T) new LoginViewModel(authRepository);
         }
         throw new IllegalArgumentException("Unknown ViewModel class: " + modelClass.getName());
+    }
+
+    private PlaceRepository createPlaceRepository() {
+        PlaceStorage placeStorage = new RoomPlaceStorage(AppDatabase.getInstance(context).placeDao());
+        ClientStorage clientStorage = new SharedPrefClientStorage(context);
+        return new PlaceRepositoryImpl(placeStorage, clientStorage, new NetworkApi()); // ← composition root
     }
 }

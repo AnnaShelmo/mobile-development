@@ -8,6 +8,8 @@ import java.util.List;
 public interface PlaceRepository {
     List<Place> getPlaces();
 
+    List<Place> getSavedPlaces();
+
     Place getPlace(int id);
 
     List<Place> searchPlaces(String query);

@@ -8,59 +8,70 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Каталог мест (Room + NetworkApi)"
-        android:textSize="18sp"
+        android:layout_marginTop="48dp"
+        android:gravity="center"
+        android:text="Nocturne"
+        android:textSize="32sp"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textViewPlaces"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="Каталог интересных мест"
         android:textSize="16sp" />
 
-    <EditText
-        android:id="@+id/fieldSearch"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:hint="Поиск по названию, городу или стране (сеть)"
-        android:inputType="text" />
-
     <Button
-        android:id="@+id/buttonSearch"
+        android:id="@+id/buttonLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Найти" />
+        android:layout_marginTop="48dp"
+        android:text="Войти" />
 
     <TextView
-        android:id="@+id/textViewSearchStatus"
+        android:id="@+id/textGuest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="4dp"
-        android:textSize="14sp" />
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:padding="12dp"
+        android:text="Продолжить как гость"
+        android:textColor="?attr/colorPrimary"
+        android:textSize="16sp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="48dp"
         android:text="Информация о клиенте (SharedPreferences)"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/fieldClientName"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Имя клиента"
-        android:inputType="textPersonName" />
+        android:orientation="horizontal">
 
-    <EditText
-        android:id="@+id/fieldClientPhone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Телефон клиента"
-        android:inputType="phone" />
+        <EditText
+            android:id="@+id/fieldClientName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Имя клиента"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/fieldClientPhone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Телефон"
+            android:inputType="phone" />
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/buttonSaveClient"
@@ -72,14 +83,6 @@
         android:id="@+id/textViewClientInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="8dp"
         android:textSize="16sp" />
-
-    <Button
-        android:id="@+id/buttonLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Авторизация" />
 
 </LinearLayout>

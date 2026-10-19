@@ -43,11 +43,11 @@ public class RoomPlaceStorage implements PlaceStorage {
         String date = LocalDate.now().toString();
         List<PlaceEntity> seed = new ArrayList<>();
         seed.add(new PlaceEntity(1, "Пражский град", "Крупнейший древний замок мира",
-                "Прага", "Чехия", "замок", "", 1344, date));
+                "Прага", "Чехия", "замок", "place_prague_castle", 1344, date));
         seed.add(new PlaceEntity(2, "Собор Парижской Богоматери", "Готический собор с витражами",
-                "Париж", "Франция", "собор", "", 1163, date));
+                "Париж", "Франция", "собор", "place_notre_dame", 1163, date));
         seed.add(new PlaceEntity(3, "Старый театр", "Знаменитый оперный театр",
-                "Вена", "Австрия", "театр", "", 1869, date));
+                "Вена", "Австрия", "театр", "place_vienna_opera", 1869, date));
         return seed;
     }
 

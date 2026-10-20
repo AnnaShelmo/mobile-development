@@ -6,7 +6,7 @@ import com.mirea.shelmichas.nocturne.data.storage.models.Place;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-
+//Реализация хранилища через Room + seed-данные
 public class RoomPlaceStorage implements PlaceStorage {
 
     private final PlaceDao placeDao;
@@ -42,12 +42,21 @@ public class RoomPlaceStorage implements PlaceStorage {
     private List<PlaceEntity> seedPlaces() {
         String date = LocalDate.now().toString();
         List<PlaceEntity> seed = new ArrayList<>();
-        seed.add(new PlaceEntity(1, "Пражский град", "Крупнейший древний замок мира",
-                "Прага", "Чехия", "замок", "place_prague_castle", 1344, date));
-        seed.add(new PlaceEntity(2, "Собор Парижской Богоматери", "Готический собор с витражами",
-                "Париж", "Франция", "собор", "place_notre_dame", 1163, date));
-        seed.add(new PlaceEntity(3, "Старый театр", "Знаменитый оперный театр",
-                "Вена", "Австрия", "театр", "place_vienna_opera", 1869, date));
+        seed.add(new PlaceEntity(1, "Собор Парижской Богоматери",
+                "Туманный готический собор, взметнувший каменные кружева над Сеной",
+                "Париж", "Франция", "готический собор",
+                "https://i.pinimg.com/1200x/b0/72/f2/b072f2726f481b21d9bfaa8542a62be5.jpg",
+                1163, date));
+        seed.add(new PlaceEntity(2, "Замок Бран",
+                "Одинокий замок Дракулы на скале, окутанный карпатским туманом",
+                "Брашов", "Румыния", "готический замок",
+                "https://wikiway.com/upload/hl-photo/454/65f/zamok-drakuly_108.jpg",
+                1377, date));
+        seed.add(new PlaceEntity(3, "Кёльнский собор",
+                "Чёрные шпили, уходящие в свинцовое небо над Рейном",
+                "Кёльн", "Германия", "готический собор",
+                "https://i.pinimg.com/736x/3e/19/8b/3e198bb6dbfc6fdc7e66e7d1e4fdd5f8.jpg",
+                1248, date));
         return seed;
     }
 

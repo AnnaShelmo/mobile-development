@@ -1,7 +1,7 @@
 package com.mirea.shelmichas.nocturne.domain.repository;
 
 public interface AuthCallback {
-    void onSuccess();
+    void onSuccess();//успех входа
 
-    void onFailure(String message);
+    void onFailure(String message);//ошибка
 }

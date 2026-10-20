@@ -1,6 +1,7 @@
 package com.mirea.shelmichas.nocturne.presentation;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.mirea.shelmichas.nocturne.R;
 import com.mirea.shelmichas.nocturne.domain.models.Place;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,11 +23,13 @@ public class PlaceRecyclerViewAdapter
 
     private List<Place> itemList = new ArrayList<>();
 
+    //получение карточки
     public void setItems(List<Place> items) {
         this.itemList = items;
         notifyDataSetChanged();
     }
 
+    // создание, на выходе пустая карточка с запомненными ссылками, без данных.
     @NonNull
     @Override
     public PlaceViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -34,6 +38,7 @@ public class PlaceRecyclerViewAdapter
         return new PlaceViewHolder(recyclerViewItem);
     }
 
+    // заполнение данными
     @Override
     public void onBindViewHolder(@NonNull PlaceViewHolder holder, int position) {
         holder.bind(itemList.get(position));
@@ -66,14 +71,19 @@ public class PlaceRecyclerViewAdapter
             this.cityView.setText(item.getCity() + ", " + item.getCountry() + " · " + item.getYear());
             this.descriptionView.setText(item.getDescription());
 
-            // картинка ищется в drawable по имени из модели (как flagName в примере)
-            int resID = context.getResources()
-                    .getIdentifier(item.getImageUrl(), "drawable", context.getPackageName());
-            if (resID != 0) {
-                this.imageView.setImageResource(resID);
-            } else {
-                this.imageView.setImageDrawable(null);
-            }
+            // изображение загружается из сети через Picasso
+            Picasso.get()
+                    .load(item.getImageUrl())
+                    .placeholder(R.mipmap.ic_launcher)
+                    .error(R.mipmap.ic_launcher)
+                    .into(this.imageView);
+
+            // открытие страницы сущности
+            itemView.setOnClickListener(v -> {
+                Intent intent = new Intent(context, PlaceDetailsActivity.class);
+                intent.putExtra(PlaceDetailsActivity.EXTRA_PLACE_ID, item.getId());
+                context.startActivity(intent);
+            });
         }
     }
 }

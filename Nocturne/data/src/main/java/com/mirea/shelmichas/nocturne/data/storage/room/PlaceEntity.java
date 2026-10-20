@@ -2,7 +2,7 @@ package com.mirea.shelmichas.nocturne.data.storage.room;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-
+//Таблица мест в БД
 @Entity(tableName = "places")
 public class PlaceEntity {
     @PrimaryKey

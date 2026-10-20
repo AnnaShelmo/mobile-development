@@ -7,5 +7,5 @@ public interface AuthRepository {
 
     void signOut();
 
-    boolean isLoggedIn();
+    boolean isLoggedIn(); // «пользователь авторизован?»
 }

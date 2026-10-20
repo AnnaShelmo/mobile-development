@@ -25,6 +25,7 @@ public class PlacesActivity extends AppCompatActivity {
 
         vm = new ViewModelProvider(this, new NocturneViewModelFactory(this)).get(PlacesViewModel.class);
 
+        //прокрутка
         PlaceRecyclerViewAdapter placeAdapter = new PlaceRecyclerViewAdapter();
         RecyclerView recyclerView = findViewById(R.id.recyclerViewPlaces);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

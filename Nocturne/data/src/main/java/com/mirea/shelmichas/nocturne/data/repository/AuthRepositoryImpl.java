@@ -7,6 +7,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.mirea.shelmichas.nocturne.domain.repository.AuthCallback;
 import com.mirea.shelmichas.nocturne.domain.repository.AuthRepository;
 
+
 public class AuthRepositoryImpl implements AuthRepository {
 
     private final FirebaseAuth mAuth;

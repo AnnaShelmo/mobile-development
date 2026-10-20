@@ -12,6 +12,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+//связывает NetworkApi + Room + SharedPreferences
 public class PlaceRepositoryImpl implements PlaceRepository {
 
     private final PlaceStorage placeStorage;
@@ -45,6 +46,7 @@ public class PlaceRepositoryImpl implements PlaceRepository {
         return result;
     }
 
+    // получение места по айди
     @Override
     public Place getPlace(int id) {
         com.mirea.shelmichas.nocturne.data.storage.models.Place place = networkApi.getPlace(id);

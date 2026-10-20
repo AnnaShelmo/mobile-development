@@ -5,7 +5,7 @@ import androidx.room.Insert;
 import androidx.room.Query;
 
 import java.util.List;
-
+// Запросы к таблице
 @Dao
 public interface PlaceDao {
 

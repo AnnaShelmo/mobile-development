@@ -25,4 +25,7 @@ dependencies {
     implementation(libs.firebase.auth)
     api(libs.room.runtime)
     annotationProcessor(libs.room.compiler)
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.okhttp)
 }

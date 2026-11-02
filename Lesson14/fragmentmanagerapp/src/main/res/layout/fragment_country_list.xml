@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Макет CountryListFragment: просто список стран -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CountryListFragment">
+
+    <!-- Заполняется ArrayAdapter'ом в CountryListFragment.onViewCreated() -->
+    <ListView
+        android:id="@+id/listViewCountries"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</FrameLayout>

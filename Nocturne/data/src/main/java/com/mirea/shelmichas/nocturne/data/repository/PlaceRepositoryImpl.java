@@ -75,6 +75,34 @@ public class PlaceRepositoryImpl implements PlaceRepository {
         placeStorage.savePlace(mapToStorage(place));
     }
 
+    // Избранное: id лежат в Room, места берём из каталога
+    @Override
+    public List<Place> getFavoritePlaces() {
+        List<Place> result = new ArrayList<>();
+        for (Integer id : placeStorage.getFavoriteIds()) {
+            Place place = getPlace(id);
+            if (place != null) {
+                result.add(place);
+            }
+        }
+        return result;
+    }
+
+    @Override
+    public boolean isFavorite(int placeId) {
+        return placeStorage.isFavorite(placeId);
+    }
+
+    @Override
+    public void addFavorite(int placeId) {
+        placeStorage.addFavorite(placeId);
+    }
+
+    @Override
+    public void removeFavorite(int placeId) {
+        placeStorage.removeFavorite(placeId);
+    }
+
     // Информация о клиенте хранится в SharedPreferences
     @Override
     public ClientInfo getClientInfo() {

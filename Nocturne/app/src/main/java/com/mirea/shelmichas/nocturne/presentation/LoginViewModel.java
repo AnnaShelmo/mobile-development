@@ -17,6 +17,8 @@ public class LoginViewModel extends ViewModel {
 
     private final MutableLiveData<String> authStatus = new MutableLiveData<>();
     private final MutableLiveData<Boolean> loggedIn = new MutableLiveData<>();
+    // Становится true только после успешного входа/регистрации.
+    private final MutableLiveData<Boolean> authCompleted = new MutableLiveData<>(false);
 
     public LoginViewModel(AuthRepository authRepository) {
         this.authRepository = authRepository;
@@ -31,11 +33,20 @@ public class LoginViewModel extends ViewModel {
         return loggedIn;
     }
 
+    public LiveData<Boolean> getAuthCompleted() {
+        return authCompleted;
+    }
+
+    public void consumeAuthCompleted() {
+        authCompleted.setValue(false);
+    }
+
     public void signIn(String email, String password) {
         new SignInUseCase(authRepository).execute(email, password, new AuthCallback() {
             @Override
             public void onSuccess() {
                 updateAuthStatus();
+                authCompleted.setValue(true);
             }
 
             @Override
@@ -50,6 +61,7 @@ public class LoginViewModel extends ViewModel {
             @Override
             public void onSuccess() {
                 updateAuthStatus();
+                authCompleted.setValue(true);
             }
 
             @Override

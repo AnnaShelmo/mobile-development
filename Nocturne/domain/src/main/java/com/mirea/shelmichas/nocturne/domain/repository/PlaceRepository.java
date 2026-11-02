@@ -16,6 +16,14 @@ public interface PlaceRepository {
 
     void savePlace(Place place);
 
+    List<Place> getFavoritePlaces();
+
+    boolean isFavorite(int placeId);
+
+    void addFavorite(int placeId);
+
+    void removeFavorite(int placeId);
+
     ClientInfo getClientInfo();
 
     void saveClientInfo(ClientInfo clientInfo);

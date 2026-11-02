@@ -8,4 +8,6 @@ public interface AuthRepository {
     void signOut();
 
     boolean isLoggedIn(); // «пользователь авторизован?»
+
+    String getCurrentUserEmail(); // email текущего пользователя или null
 }

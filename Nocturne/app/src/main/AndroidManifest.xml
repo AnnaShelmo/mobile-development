@@ -23,15 +23,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".presentation.LoginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".presentation.PlacesActivity"
-            android:exported="false" />
-        <activity
-            android:name=".presentation.PlaceDetailsActivity"
-            android:exported="false" />
     </application>
 
 </manifest>

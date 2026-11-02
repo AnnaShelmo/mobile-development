@@ -61,4 +61,12 @@ public class AuthRepositoryImpl implements AuthRepository {
     public boolean isLoggedIn() {
         return mAuth.getCurrentUser() != null;
     }
+
+    @Override
+    public String getCurrentUserEmail() {
+        if (mAuth.getCurrentUser() == null) {
+            return null;
+        }
+        return mAuth.getCurrentUser().getEmail();
+    }
 }

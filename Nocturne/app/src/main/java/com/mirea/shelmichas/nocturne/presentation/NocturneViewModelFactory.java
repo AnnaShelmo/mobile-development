@@ -25,7 +25,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class NocturneViewModelFactory implements ViewModelProvider.Factory {
 
-    private final Context context; // Activity передаётся сюда, но в ViewModel не попадает
+    private final Context context; // Activity/фрагмент передаёт контекст, но в ViewModel он не попадает
 
     public NocturneViewModelFactory(Context context) {
         this.context = context;
@@ -34,26 +34,38 @@ public class NocturneViewModelFactory implements ViewModelProvider.Factory {
     @NonNull
     @Override
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
-        if (modelClass.isAssignableFrom(MainViewModel.class)) {
-            return (T) new MainViewModel(createPlaceRepository()); // ← ViewModel получает только репозиторий
-        }
         if (modelClass.isAssignableFrom(PlacesViewModel.class)) {
-            return (T) new PlacesViewModel(createPlaceRepository()); // ← каталог: сервис + БД
+            return (T) new PlacesViewModel(createPlaceRepository()); // каталог: сервис + БД
         }
         if (modelClass.isAssignableFrom(PlaceDetailsViewModel.class)) {
-            return (T) new PlaceDetailsViewModel(createPlaceRepository(), createWeatherRepository());
+            return (T) new PlaceDetailsViewModel(createPlaceRepository(),
+                    createWeatherRepository(), createAuthRepository());
         }
         if (modelClass.isAssignableFrom(LoginViewModel.class)) {
-            AuthRepository authRepository = new AuthRepositoryImpl();
-            return (T) new LoginViewModel(authRepository);
+            return (T) new LoginViewModel(createAuthRepository());
+        }
+        if (modelClass.isAssignableFrom(WelcomeViewModel.class)) {
+            return (T) new WelcomeViewModel(createAuthRepository());
+        }
+        if (modelClass.isAssignableFrom(ProfileViewModel.class)) {
+            return (T) new ProfileViewModel(createAuthRepository(), createPlaceRepository());
+        }
+        if (modelClass.isAssignableFrom(FavoritesViewModel.class)) {
+            return (T) new FavoritesViewModel(createPlaceRepository(), createAuthRepository());
         }
         throw new IllegalArgumentException("Unknown ViewModel class: " + modelClass.getName());
     }
 
     private PlaceRepository createPlaceRepository() {
-        PlaceStorage placeStorage = new RoomPlaceStorage(AppDatabase.getInstance(context).placeDao());
+        PlaceStorage placeStorage = new RoomPlaceStorage(
+                AppDatabase.getInstance(context).placeDao(),
+                AppDatabase.getInstance(context).favoriteDao());
         ClientStorage clientStorage = new SharedPrefClientStorage(context);
-        return new PlaceRepositoryImpl(placeStorage, clientStorage, new NetworkApi()); // ← composition root
+        return new PlaceRepositoryImpl(placeStorage, clientStorage, new NetworkApi()); // composition root
+    }
+
+    private AuthRepository createAuthRepository() {
+        return new AuthRepositoryImpl();
     }
 
     // Внешний сервис погоды (Open-Meteo) через Retrofit.

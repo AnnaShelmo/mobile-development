@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Макет CountryDetailsFragment: один TextView, текст подставляет ViewModel -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CountryDetailsFragment">
+
+    <!-- Пока страна не выбрана — показывается текст-заглушка -->
+    <TextView
+        android:id="@+id/textViewCountryDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="Здесь будет подробная информация о выбранной стране"
+        android:textSize="16sp" />
+
+</FrameLayout>

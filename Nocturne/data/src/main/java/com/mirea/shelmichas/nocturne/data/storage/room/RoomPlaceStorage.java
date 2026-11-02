@@ -10,9 +10,11 @@ import java.util.List;
 public class RoomPlaceStorage implements PlaceStorage {
 
     private final PlaceDao placeDao;
+    private final FavoriteDao favoriteDao;
 
-    public RoomPlaceStorage(PlaceDao placeDao) {
+    public RoomPlaceStorage(PlaceDao placeDao, FavoriteDao favoriteDao) {
         this.placeDao = placeDao;
+        this.favoriteDao = favoriteDao;
     }
 
     @Override
@@ -36,6 +38,32 @@ public class RoomPlaceStorage implements PlaceStorage {
     @Override
     public boolean savePlace(Place place) {
         placeDao.insert(mapToEntity(place));
+        return true;
+    }
+
+    @Override
+    public List<Integer> getFavoriteIds() {
+        List<Integer> ids = new ArrayList<>();
+        for (FavoriteEntity favorite : favoriteDao.getAll()) {
+            ids.add(favorite.getPlaceId());
+        }
+        return ids;
+    }
+
+    @Override
+    public boolean isFavorite(int placeId) {
+        return favoriteDao.isFavorite(placeId);
+    }
+
+    @Override
+    public boolean addFavorite(int placeId) {
+        favoriteDao.insert(new FavoriteEntity(placeId, LocalDate.now().toString()));
+        return true;
+    }
+
+    @Override
+    public boolean removeFavorite(int placeId) {
+        favoriteDao.delete(placeId);
         return true;
     }
 

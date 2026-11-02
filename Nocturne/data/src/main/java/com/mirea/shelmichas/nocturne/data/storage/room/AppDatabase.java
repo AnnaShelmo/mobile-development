@@ -7,12 +7,14 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 // настройка БД Room
-@Database(entities = {PlaceEntity.class}, version = 2, exportSchema = false)
+@Database(entities = {PlaceEntity.class, FavoriteEntity.class}, version = 3, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static volatile AppDatabase INSTANCE;
 
     public abstract PlaceDao placeDao();
+
+    public abstract FavoriteDao favoriteDao();
 
     public static AppDatabase getInstance(Context context) {
         if (INSTANCE == null) {
@@ -21,7 +23,7 @@ public abstract class AppDatabase extends RoomDatabase {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                             AppDatabase.class, "nocturne_database")
                             .allowMainThreadQueries()
-                            // новая версия сидов: старая БД без картинок пересоздаётся
+                            // новая версия БД пересоздаётся (учебный проект)
                             .fallbackToDestructiveMigration()
                             .build();
                 }

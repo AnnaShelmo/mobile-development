@@ -10,6 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.mirea.shelmichas.nocturne.R;
 
@@ -33,6 +35,8 @@ public class LoginFragment extends Fragment {
         vm = new ViewModelProvider(this, new NocturneViewModelFactory(requireContext()))
                 .get(LoginViewModel.class);
 
+        NavController navController = NavHostFragment.findNavController(this);
+
         vm.getAuthStatus().observe(getViewLifecycleOwner(), statusView::setText);
 
         // После успешного входа сразу открываем каталог.
@@ -42,7 +46,7 @@ public class LoginFragment extends Fragment {
             }
             vm.consumeAuthCompleted();
             Toast.makeText(requireContext(), "Вход выполнен", Toast.LENGTH_SHORT).show();
-            requireView().post(() -> ((MainActivity) requireActivity()).openCatalog());
+            requireView().post(() -> navController.navigate(R.id.action_login_to_catalog));
         });
 
         view.findViewById(R.id.buttonSignIn).setOnClickListener(v -> {

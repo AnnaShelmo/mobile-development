@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Светлая палитра приложения. -->
+    <color name="day_background">#F7F5FC</color>
+    <color name="day_surface">#FFFFFF</color>
+    <color name="day_surface_variant">#E9E4F7</color>
+    <color name="day_primary">#5145CD</color>
+    <color name="day_on_primary">#FFFFFF</color>
+    <color name="day_on_primary_muted">#D9D4FF</color>
+    <color name="day_primary_container">#E3DFFF</color>
+    <color name="day_on_primary_container">#171046</color>
+    <color name="day_secondary">#007B85</color>
+    <color name="day_on_secondary">#FFFFFF</color>
+    <color name="day_secondary_container">#C8F0F5</color>
+    <color name="day_on_secondary_container">#002022</color>
+    <color name="day_on_background">#1C1930</color>
+    <color name="day_on_surface_variant">#5B5570</color>
+    <color name="day_outline">#8C86A3</color>
+</resources>

@@ -7,6 +7,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.mirea.shelmichas.nocturne.R;
 
@@ -26,20 +28,21 @@ public class WelcomeFragment extends Fragment {
         vm = new ViewModelProvider(this, new NocturneViewModelFactory(requireContext()))
                 .get(WelcomeViewModel.class);
 
+        NavController navController = NavHostFragment.findNavController(this);
+
         view.findViewById(R.id.buttonLogin).setOnClickListener(v -> {
-            MainActivity activity = (MainActivity) requireActivity();
             // Если сессия уже сохранена, сразу открываем каталог.
             if (vm.isLoggedIn()) {
-                activity.openCatalog();
+                navController.navigate(R.id.action_welcome_to_catalog);
             } else {
-                activity.openLogin();
+                navController.navigate(R.id.action_welcome_to_login);
             }
         });
 
         // Гость не должен оставаться в аккаунте с прошлого запуска.
         view.findViewById(R.id.textGuest).setOnClickListener(v -> {
             vm.enterGuestMode();
-            ((MainActivity) requireActivity()).openCatalog();
+            navController.navigate(R.id.action_welcome_to_catalog);
         });
     }
 }

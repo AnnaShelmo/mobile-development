@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">BottomNavigationApp</string>
+
+    <string name="title_home">Главная</string>
+    <string name="title_info">Информация</string>
+    <string name="title_profile">Профиль</string>
+
+    <string name="home_title">Nocturne Guide</string>
+    <string name="home_subtitle">Атмосферные места для вечерних прогулок</string>
+    <string name="home_text">Nocturne Guide — небольшой путеводитель по местам, которые особенно красивы после заката.\n\nЧто стоит посмотреть:\n\n• Смотровая на набережной — панорама города и огни на воде.\n• Кофейня во дворе — тихая музыка, винил и кофе до полуночи.\n• Парк у старого моста — мягкая подсветка и длинные аллеи.\n\nПодборка будет пополняться новыми местами.</string>
+
+    <string name="info_title">О приложении</string>
+    <string name="info_text">Nocturne Guide помогает находить места, где приятно провести вечер: смотровые площадки, тихие кафе, парки и набережные.\n\nМы собираем небольшие подборки с описанием атмосферы, чтобы было проще выбрать, куда пойти.\n\nВерсия 1.0</string>
+
+    <string name="profile_title">Профиль</string>
+    <string name="profile_status">Гость</string>
+    <string name="profile_text">Город: не указан\nЛюбимых мест: 0\n\nПрофиль пока не настроен. Здесь появятся сохранённые места и персональные подборки.</string>
+</resources>

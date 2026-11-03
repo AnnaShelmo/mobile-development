@@ -20,18 +20,10 @@ import com.squareup.picasso.Picasso;
 // Страница места: описание, фото, погода и избранное.
 public class PlaceDetailsFragment extends Fragment {
 
-    private static final String ARG_PLACE_ID = "arg_place_id";
+    public static final String ARG_PLACE_ID = "arg_place_id";
 
     private PlaceDetailsViewModel vm;
     private Button favoriteButton;
-
-    public static PlaceDetailsFragment newInstance(int placeId) {
-        Bundle args = new Bundle();
-        args.putInt(ARG_PLACE_ID, placeId);
-        PlaceDetailsFragment fragment = new PlaceDetailsFragment();
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     public PlaceDetailsFragment() {
         super(R.layout.fragment_place_details);

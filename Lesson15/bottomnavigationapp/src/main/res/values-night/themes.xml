@@ -1,0 +1,23 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Ночная тема: та же тёмная гамма. -->
+    <style name="Base.Theme.Lesson15" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/night_primary</item>
+        <item name="colorOnPrimary">@color/night_on_primary</item>
+        <item name="colorPrimaryContainer">@color/night_surface_variant</item>
+        <item name="colorOnPrimaryContainer">@color/night_on_background</item>
+        <item name="colorSecondary">@color/night_secondary</item>
+        <item name="colorOnSecondary">@color/night_on_primary</item>
+        <item name="colorSecondaryContainer">@color/night_surface_variant</item>
+        <item name="colorOnSecondaryContainer">@color/night_on_background</item>
+        <item name="colorSurface">@color/night_surface</item>
+        <item name="colorOnSurface">@color/night_on_background</item>
+        <item name="colorSurfaceVariant">@color/night_surface_variant</item>
+        <item name="colorOnSurfaceVariant">@color/night_on_surface_variant</item>
+        <item name="colorOutline">@color/night_outline</item>
+        <item name="android:colorBackground">@color/night_background</item>
+        <item name="android:windowBackground">@color/night_background</item>
+        <item name="android:statusBarColor">@color/night_background</item>
+        <item name="android:navigationBarColor">@color/night_background</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>

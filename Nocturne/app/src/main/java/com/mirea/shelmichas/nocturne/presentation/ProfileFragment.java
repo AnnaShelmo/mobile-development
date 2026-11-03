@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.mirea.shelmichas.nocturne.R;
 
@@ -38,6 +40,8 @@ public class ProfileFragment extends Fragment {
 
         vm = new ViewModelProvider(this, new NocturneViewModelFactory(requireContext()))
                 .get(ProfileViewModel.class);
+
+        NavController navController = NavHostFragment.findNavController(this);
 
         vm.getLoggedIn().observe(getViewLifecycleOwner(), loggedIn -> {
             boolean isLoggedIn = Boolean.TRUE.equals(loggedIn);
@@ -67,9 +71,9 @@ public class ProfileFragment extends Fragment {
             if (Boolean.TRUE.equals(vm.getLoggedIn().getValue())) {
                 vm.signOut();
                 Toast.makeText(requireContext(), "Вы вышли из аккаунта", Toast.LENGTH_SHORT).show();
-                ((MainActivity) requireActivity()).openWelcome();
+                navController.navigate(R.id.action_profile_to_welcome);
             } else {
-                ((MainActivity) requireActivity()).openLogin();
+                navController.navigate(R.id.action_profile_to_login);
             }
         });
     }

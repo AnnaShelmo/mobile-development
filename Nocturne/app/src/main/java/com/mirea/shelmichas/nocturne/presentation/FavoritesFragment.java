@@ -9,6 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -40,8 +42,13 @@ public class FavoritesFragment extends Fragment {
         vm = new ViewModelProvider(this, new NocturneViewModelFactory(requireContext()))
                 .get(FavoritesViewModel.class);
 
-        PlaceRecyclerViewAdapter adapter = new PlaceRecyclerViewAdapter(place ->
-                ((MainActivity) requireActivity()).openPlaceDetails(place.getId()));
+        NavController navController = NavHostFragment.findNavController(this);
+
+        PlaceRecyclerViewAdapter adapter = new PlaceRecyclerViewAdapter(place -> {
+            Bundle args = new Bundle();
+            args.putInt(PlaceDetailsFragment.ARG_PLACE_ID, place.getId());
+            navController.navigate(R.id.action_favorites_to_place_details, args);
+        });
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         recyclerView.setAdapter(adapter);
 
@@ -52,7 +59,7 @@ public class FavoritesFragment extends Fragment {
         vm.getLoggedIn().observe(getViewLifecycleOwner(), loggedIn -> updateUi());
 
         loginButton.setOnClickListener(v ->
-                ((MainActivity) requireActivity()).openLogin());
+                navController.navigate(R.id.action_favorites_to_login));
     }
 
     @Override

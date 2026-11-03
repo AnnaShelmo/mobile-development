@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">NavigationDrawerApp</string>
+
+    <string name="nav_header_title">Nocturne Guide</string>
+    <string name="nav_header_subtitle">Гость</string>
+
+    <string name="title_home">Главная</string>
+    <string name="title_collections">Подборки</string>
+    <string name="title_favorites">Избранное</string>
+    <string name="title_about">О приложении</string>
+
+    <string name="home_title">Nocturne Guide</string>
+    <string name="home_subtitle">Городские места, которые стоит увидеть</string>
+    <string name="home_text">Nocturne Guide помогает находить места, где приятно провести вечер: смотровые площадки, тихие кафе, парки и набережные.\n\nОткрывайте подборки, сохраняйте понравившиеся места и возвращайтесь к ним в любой момент.</string>
+
+    <string name="collections_title">Подборки</string>
+    <string name="collections_text">• Вечерние прогулки — центр города после заката\n\n• Кофе и книги — тихие места с хорошим кофе\n\n• Смотровые площадки — панорамы и огни\n\n• Тихое воскресенье — парки и набережные без толпы</string>
+
+    <string name="favorites_title">Избранное</string>
+    <string name="favorites_text">Здесь появятся места, которые вы сохраните.\n\nПока список пуст. Откройте подборку и отметьте то, что хочется посетить.</string>
+
+    <string name="about_title">О приложении</string>
+    <string name="about_text">Nocturne Guide — путеводитель по атмосферным местам для вечерних прогулок.\n\nПриложение помогает находить интересные локации, собирать их в подборки и возвращаться к любимым местам.\n\nВерсия 1.0</string>
+</resources>

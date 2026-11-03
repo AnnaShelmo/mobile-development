@@ -9,6 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -33,9 +35,14 @@ public class CatalogFragment extends Fragment {
         vm = new ViewModelProvider(this, new NocturneViewModelFactory(requireContext()))
                 .get(PlacesViewModel.class);
 
+        NavController navController = NavHostFragment.findNavController(this);
+
         // Нажатие на карточку открывает страницу места во фрагменте.
-        PlaceRecyclerViewAdapter placeAdapter = new PlaceRecyclerViewAdapter(place ->
-                ((MainActivity) requireActivity()).openPlaceDetails(place.getId()));
+        PlaceRecyclerViewAdapter placeAdapter = new PlaceRecyclerViewAdapter(place -> {
+            Bundle args = new Bundle();
+            args.putInt(PlaceDetailsFragment.ARG_PLACE_ID, place.getId());
+            navController.navigate(R.id.action_catalog_to_place_details, args);
+        });
 
         RecyclerView recyclerView = view.findViewById(R.id.recyclerViewPlaces);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));

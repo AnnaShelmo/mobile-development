@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_welcome">
+
+    <fragment
+        android:id="@+id/nav_welcome"
+        android:name="com.mirea.shelmichas.nocturne.presentation.WelcomeFragment"
+        android:label="Nocturne">
+
+        <action
+            android:id="@+id/action_welcome_to_login"
+            app:destination="@id/nav_login" />
+
+        <action
+            android:id="@+id/action_welcome_to_catalog"
+            app:destination="@id/nav_catalog"
+            app:popUpTo="@id/nav_welcome"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_login"
+        android:name="com.mirea.shelmichas.nocturne.presentation.LoginFragment"
+        android:label="Вход">
+
+        <action
+            android:id="@+id/action_login_to_catalog"
+            app:destination="@id/nav_catalog"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_catalog"
+        android:name="com.mirea.shelmichas.nocturne.presentation.CatalogFragment"
+        android:label="Каталог">
+
+        <action
+            android:id="@+id/action_catalog_to_place_details"
+            app:destination="@id/nav_place_details" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_favorites"
+        android:name="com.mirea.shelmichas.nocturne.presentation.FavoritesFragment"
+        android:label="Избранное">
+
+        <action
+            android:id="@+id/action_favorites_to_place_details"
+            app:destination="@id/nav_place_details" />
+
+        <action
+            android:id="@+id/action_favorites_to_login"
+            app:destination="@id/nav_login" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.mirea.shelmichas.nocturne.presentation.ProfileFragment"
+        android:label="Профиль">
+
+        <action
+            android:id="@+id/action_profile_to_login"
+            app:destination="@id/nav_login" />
+
+        <action
+            android:id="@+id/action_profile_to_welcome"
+            app:destination="@id/nav_welcome"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_place_details"
+        android:name="com.mirea.shelmichas.nocturne.presentation.PlaceDetailsFragment"
+        android:label="Место">
+
+        <argument
+            android:name="arg_place_id"
+            app:argType="integer" />
+    </fragment>
+
+</navigation>

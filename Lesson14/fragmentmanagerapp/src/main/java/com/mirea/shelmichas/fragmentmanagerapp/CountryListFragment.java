@@ -24,7 +24,6 @@ public class CountryListFragment extends Fragment {
 
     private ShareViewModel viewModel;
 
-    // отрисовка пустых строк
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -33,7 +32,7 @@ public class CountryListFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_country_list, container, false);
     }
 
-    // заполнение строк
+    //
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);

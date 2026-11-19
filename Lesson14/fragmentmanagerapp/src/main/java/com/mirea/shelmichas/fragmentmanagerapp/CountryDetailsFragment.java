@@ -30,7 +30,7 @@ public class CountryDetailsFragment extends Fragment {
 
     private ShareViewModel viewModel;
 
-    // отрисовка
+    // Раздуваем макет фрагмента
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -38,7 +38,7 @@ public class CountryDetailsFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_country_details, container, false);
     }
 
-    // заполнение строки
+    //
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);

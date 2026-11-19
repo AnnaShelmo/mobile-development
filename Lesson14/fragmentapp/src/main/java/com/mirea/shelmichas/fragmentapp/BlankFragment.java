@@ -20,6 +20,7 @@ public class BlankFragment extends Fragment {
         return view;
     }
 
+    // Получить данные с помощью вызова requireArguments(
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);

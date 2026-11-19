@@ -21,7 +21,7 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Слушатель с ТЕМ ЖЕ ключом "requestKey", что и в DataFragment.
+        // подписывается на ящик с адресом "requestKey", то есть говорит: «если в этом ящике появится конверт, отдай его мне»
         // Результат доставляется, когда фрагмент доходит до состояния STARTED,
         // то есть после onCreateView — поэтому textViewResult уже существует.
         getParentFragmentManager().setFragmentResultListener("requestKey", this,

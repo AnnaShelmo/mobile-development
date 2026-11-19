@@ -43,6 +43,11 @@
     </fragment>
 
     <fragment
+        android:id="@+id/nav_scanner"
+        android:name="com.mirea.shelmichas.nocturne.presentation.ScannerFragment"
+        android:label="Сканер" />
+
+    <fragment
         android:id="@+id/nav_favorites"
         android:name="com.mirea.shelmichas.nocturne.presentation.FavoritesFragment"
         android:label="Избранное">

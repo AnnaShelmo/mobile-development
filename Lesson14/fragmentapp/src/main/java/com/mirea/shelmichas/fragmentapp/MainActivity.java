@@ -21,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
 
             getSupportFragmentManager().beginTransaction()
                     .setReorderingAllowed(true)
-                    .add(R.id.fragment_container_view, fragment)
-                    .commit();
+                    .add(R.id.fragment_container_view, fragment)//add() позволяет добавить фрагмент
+                    .commit();//сигнализирует о том, что все операции были добавлены в транзакцию
         }
     }
 }

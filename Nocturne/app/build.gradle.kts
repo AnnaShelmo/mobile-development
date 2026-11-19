@@ -47,6 +47,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.recyclerview)
     implementation(libs.cardview)
+    implementation(libs.tensorflow.lite.task.vision)
     implementation(libs.picasso)
     implementation(libs.retrofit)
     implementation(libs.converter.gson)

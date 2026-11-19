@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        //описание навигации с помощью Navigation Component
+        //NavHostFragment - отвечает за смену пункта назначения
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.nav_host);
         if (navHostFragment != null) {

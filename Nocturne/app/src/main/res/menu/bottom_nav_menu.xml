@@ -7,6 +7,11 @@
         android:title="Каталог" />
 
     <item
+        android:id="@+id/nav_scanner"
+        android:icon="@drawable/ic_scanner"
+        android:title="Сканер" />
+
+    <item
         android:id="@+id/nav_favorites"
         android:icon="@drawable/ic_favorites"
         android:title="Избранное" />

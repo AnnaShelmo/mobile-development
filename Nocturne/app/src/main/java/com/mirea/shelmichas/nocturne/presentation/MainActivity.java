@@ -78,7 +78,8 @@ public class MainActivity extends AppCompatActivity {
 
         // На карточке места подсвечиваем вкладку, с которой её открыли.
         int tabId = id == R.id.nav_place_details ? previousDestinationId() : id;
-        if (tabId == R.id.nav_catalog || tabId == R.id.nav_favorites || tabId == R.id.nav_profile) {
+        if (tabId == R.id.nav_catalog || tabId == R.id.nav_scanner
+                || tabId == R.id.nav_favorites || tabId == R.id.nav_profile) {
             bottomNavigation.getMenu().findItem(tabId).setChecked(true);
         }
     }

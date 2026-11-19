@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        //Обработка системных отступов
         ViewCompat.setOnApplyWindowInsetsListener(binding.drawerLayout, (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             binding.appBarMain.appBar.setPadding(
@@ -45,14 +46,17 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        //настройка верхней панели
         setSupportActionBar(binding.appBarMain.toolbar);
 
+        //Получение NavController
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.nav_host);
         if (navHostFragment != null) {
             navController = navHostFragment.getNavController();
         }
 
+        //Настройка бокового меню
         appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home,
                 R.id.nav_collections,
@@ -61,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
                 .setOpenableLayout(binding.drawerLayout)
                 .build();
 
+        //Связывание меню с навигацией
         if (navController != null) {
             NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
             NavigationUI.setupWithNavController(binding.navView, navController);
@@ -75,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
         };
         getOnBackPressedDispatcher().addCallback(this, drawerBackCallback);
 
+        //добавляется слушатель событий бокового меню
         binding.drawerLayout.addDrawerListener(new DrawerLayout.SimpleDrawerListener() {
             @Override
             public void onDrawerOpened(@NonNull View drawerView) {
@@ -88,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    //метод отвечает за нажатие кнопки навигации
     @Override
     public boolean onSupportNavigateUp() {
         if (navController == null) {
